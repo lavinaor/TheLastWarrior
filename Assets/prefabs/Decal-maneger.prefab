@@ -1,0 +1,1002 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &649932420291996046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8904490218472426201}
+  - component: {fileID: 6406896377850548997}
+  m_Layer: 0
+  m_Name: Decal blod(2)  (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8904490218472426201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649932420291996046}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.49742424, y: -0.49585956, z: 0.5032831, w: 0.5033871}
+  m_LocalPosition: {x: -5.448, y: 0.221, z: 8.854}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -269.228, y: 546.275, z: -443.82098}
+--- !u!114 &6406896377850548997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649932420291996046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 0.9841736, y: 0.8910581}
+  m_UVBias: {x: 0.06185582, y: 0.113541834}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.22039211, y: 0, z: 0.019524312}
+  m_Size: {x: 1.83, y: 1.95, z: 2.06}
+  m_FadeFactor: 0.493
+--- !u!1 &1146221963815522810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3146546120227947917}
+  - component: {fileID: 4261020600023256951}
+  m_Layer: 0
+  m_Name: Decal blod(1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3146546120227947917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146221963815522810}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00061093684, y: -0.9996394, z: -0.020661509, w: 0.017146593}
+  m_LocalPosition: {x: -15.881, y: 0.098, z: 7.621}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -2.369, y: -178.035, z: 0.029}
+--- !u!114 &4261020600023256951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146221963815522810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: b7a2596139558dd40b6fd89dc6e3903c, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1.0980936, y: 0.8910581}
+  m_UVBias: {x: -0.04738388, y: 0.113541834}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.05262325, y: 0, z: 0.19373873}
+  m_Size: {x: 1.02, y: 0.57, z: 0.96}
+  m_FadeFactor: 0.497
+--- !u!1 &1183733286274770635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6900509320510131602}
+  - component: {fileID: 6478650971058089907}
+  m_Layer: 0
+  m_Name: Decal blod(1) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6900509320510131602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183733286274770635}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.003124103, y: -0.99010044, z: -0.020433148, w: 0.13883024}
+  m_LocalPosition: {x: -7.176, y: 0.09800005, z: 8.359}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -2.369, y: -164.037, z: 0.029}
+--- !u!114 &6478650971058089907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183733286274770635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: b7a2596139558dd40b6fd89dc6e3903c, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 0.64214504, y: 0.8910581}
+  m_UVBias: {x: -1.1096317, y: 0.113541834}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -1.7228062, y: 0, z: 0.15741271}
+  m_Size: {x: 0.8175281, y: 0.61, z: 0.78}
+  m_FadeFactor: 0.497
+--- !u!1 &1419690659546306680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2370070474859920042}
+  - component: {fileID: 2854670887883729375}
+  m_Layer: 0
+  m_Name: Decal blod(2)  (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2370070474859920042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419690659546306680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.47330195, y: -0.21092921, z: 0.67418265, w: 0.52628124}
+  m_LocalPosition: {x: -28.98, y: -1.04, z: 7.57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -231.498, y: 581.952, z: -415}
+--- !u!114 &2854670887883729375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419690659546306680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1.1477114, y: 0.767949}
+  m_UVBias: {x: 0.033200692, y: 0.11354201}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.12163067, y: -0.13470608, z: 0.019524336}
+  m_Size: {x: 2.134087, y: 1.6805872, z: 2.06}
+  m_FadeFactor: 0.493
+--- !u!1 &1788230480585710764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6302394547211719442}
+  - component: {fileID: 7798464959720174727}
+  m_Layer: 0
+  m_Name: 'Decal blod(3)  '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6302394547211719442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788230480585710764}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.49742424, y: -0.49585956, z: 0.5032831, w: 0.5033871}
+  m_LocalPosition: {x: 17.23, y: -0.78, z: 6.11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -269.228, y: 546.275, z: -443.82098}
+--- !u!114 &7798464959720174727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788230480585710764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: e443cfca13a9ab244a9de1bb5e75041e, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 1
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1.0504615, y: 0.56347823}
+  m_UVBias: {x: -0.12957385, y: 0.23050685}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.9486542, y: -0.46286324, z: 0.0050232657}
+  m_Size: {x: 3.6, y: 5.57, z: 0.53}
+  m_FadeFactor: 1
+--- !u!1 &1847004175613414124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2059400975870100010}
+  - component: {fileID: 6226164135117011393}
+  m_Layer: 0
+  m_Name: Decal blod(2)  (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2059400975870100010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847004175613414124}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.4987534, y: -0.49671507, z: 0.50116694, w: 0.50333977}
+  m_LocalPosition: {x: -23.9, y: -0.28, z: 6.04}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -269.483, y: 539.268, z: -450.973}
+--- !u!114 &6226164135117011393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847004175613414124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 0.9841736, y: 0.8910581}
+  m_UVBias: {x: 0.06185582, y: 0.113541834}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0.34441286, y: 1.6673502, z: 0.7302928}
+  m_Size: {x: 0.8324034, y: 0.89234185, z: 0.35166693}
+  m_FadeFactor: 0.493
+--- !u!1 &3311372352827509210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2441094092834768104}
+  - component: {fileID: 6133635067545093240}
+  m_Layer: 0
+  m_Name: Decal blod(2)  (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2441094092834768104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311372352827509210}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.37161225, y: -0.37032977, z: 0.6015285, w: 0.60243154}
+  m_LocalPosition: {x: -16.79, y: -0.54, z: 7.57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -243.287, y: 540.11096, z: -450.017}
+--- !u!114 &6133635067545093240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311372352827509210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 0.9841736, y: 0.8910581}
+  m_UVBias: {x: 0.06185582, y: 0.113541834}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.33498827, y: 0.17122044, z: -0.0276075}
+  m_Size: {x: 2.3, y: 2.83, z: 1.03}
+  m_FadeFactor: 0.493
+--- !u!1 &4199992872152661228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4077454410800569179}
+  - component: {fileID: 2260229412769910327}
+  m_Layer: 0
+  m_Name: Decal blod(2)  (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4077454410800569179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199992872152661228}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.31224665, y: -0.31079525, z: 0.6344895, w: 0.63508385}
+  m_LocalPosition: {x: -4.365, y: 0.622, z: 8.734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -232.27899, y: 540.138, z: -449.986}
+--- !u!114 &2260229412769910327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199992872152661228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 0.9841736, y: 0.8910581}
+  m_UVBias: {x: 0.06185582, y: 0.113541834}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.095141955, y: 0, z: 0.009667377}
+  m_Size: {x: 0.79, y: 1.09, z: 1.02}
+  m_FadeFactor: 0.493
+--- !u!1 &4516500406433351667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5930734653567772199}
+  - component: {fileID: 7734334374572000036}
+  m_Layer: 0
+  m_Name: Decal blod(2)  (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5930734653567772199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4516500406433351667}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.49742424, y: -0.49585956, z: 0.5032831, w: 0.5033871}
+  m_LocalPosition: {x: 3.72, y: -0.79, z: 5.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -269.228, y: 546.275, z: -443.82098}
+--- !u!114 &7734334374572000036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4516500406433351667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1.2897433, y: 0.92289275}
+  m_UVBias: {x: -0.2437139, y: 0.030328631}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.5292953, y: -0.21675295, z: 0.0071083605}
+  m_Size: {x: 2.516128, y: 2.9725351, z: 0.75}
+  m_FadeFactor: 0.493
+--- !u!1 &4603946512071000649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 689213389586475153}
+  - component: {fileID: 560241699110046752}
+  m_Layer: 0
+  m_Name: Decal blod(2)  (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &689213389586475153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603946512071000649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.49742424, y: -0.49585956, z: 0.5032831, w: 0.5033871}
+  m_LocalPosition: {x: -0.56, y: -0.635, z: 8.545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -269.228, y: 546.275, z: -443.82098}
+--- !u!114 &560241699110046752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603946512071000649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 0.9841736, y: 0.8910581}
+  m_UVBias: {x: 0.06185582, y: 0.113541834}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.22039211, y: 0, z: 0.03345671}
+  m_Size: {x: 1.83, y: 1.95, z: 3.53}
+  m_FadeFactor: 0.493
+--- !u!1 &5324489315549208542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2903442498266372625}
+  - component: {fileID: 4929348052326509075}
+  m_Layer: 0
+  m_Name: Decal blod(3)   (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2903442498266372625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324489315549208542}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.48946583, y: -0.51013273, z: 0.49789777, w: -0.5022805}
+  m_LocalPosition: {x: -27.16, y: -0.73, z: 5.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -268.565, y: 629.141, z: -181.792}
+--- !u!114 &4929348052326509075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324489315549208542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: e443cfca13a9ab244a9de1bb5e75041e, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 1
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1.8834995, y: 1.4919522}
+  m_UVBias: {x: -0.4396561, y: -0.4340341}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.5254921, y: -1.2455597, z: 0.007297963}
+  m_Size: {x: 5.809387, y: 7.519621, z: 0.77}
+  m_FadeFactor: 0.436
+--- !u!1 &6515973037108400118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6772331937403064767}
+  - component: {fileID: 3763576861090472313}
+  m_Layer: 0
+  m_Name: 'Decal blod(2) '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6772331937403064767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515973037108400118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.49742424, y: -0.49585956, z: 0.5032831, w: 0.5033871}
+  m_LocalPosition: {x: -15.915, y: -0.635, z: 8.596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -269.228, y: 546.275, z: -443.82098}
+--- !u!114 &3763576861090472313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515973037108400118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 0.9841736, y: 0.8910581}
+  m_UVBias: {x: 0.06185582, y: 0.113541834}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.22039211, y: 0, z: 0.03345671}
+  m_Size: {x: 1.83, y: 1.95, z: 3.53}
+  m_FadeFactor: 0.493
+--- !u!1 &7029656865612453500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4710210526421469647}
+  m_Layer: 0
+  m_Name: Decal-maneger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4710210526421469647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029656865612453500}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3146546120227947917}
+  - {fileID: 6900509320510131602}
+  - {fileID: 6772331937403064767}
+  - {fileID: 5930734653567772199}
+  - {fileID: 8904490218472426201}
+  - {fileID: 2059400975870100010}
+  - {fileID: 2441094092834768104}
+  - {fileID: 2370070474859920042}
+  - {fileID: 689213389586475153}
+  - {fileID: 4014267736290357286}
+  - {fileID: 4077454410800569179}
+  - {fileID: 2039663623124338954}
+  - {fileID: 6302394547211719442}
+  - {fileID: 7339326970070942030}
+  - {fileID: 2502360003075525589}
+  - {fileID: 6454479665915875954}
+  - {fileID: 2903442498266372625}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7697272766118093607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4014267736290357286}
+  - component: {fileID: 3272650604198939699}
+  m_Layer: 0
+  m_Name: Decal blod(2)  (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4014267736290357286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7697272766118093607}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6442454, y: -0.27811, z: 0.42933443, w: 0.56857246}
+  m_LocalPosition: {x: 13.23, y: -1.29, z: 6.44}
+  m_LocalScale: {x: 0.78787, y: 0.78787, z: 0.78787}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -256.265, y: 626.328, z: -393.161}
+--- !u!114 &3272650604198939699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7697272766118093607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 0.88737124, y: 1.0410024}
+  m_UVBias: {x: 0.9458621, y: -0.03640292}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0.56753314, y: -0.2723776, z: 0.009667397}
+  m_Size: {x: 1.7514389, y: 3.289224, z: 1.02}
+  m_FadeFactor: 0.493
+--- !u!1 &8335469186825720034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2039663623124338954}
+  - component: {fileID: 3091399296366133241}
+  m_Layer: 0
+  m_Name: Decal blod(2)  (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2039663623124338954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335469186825720034}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.49742424, y: -0.49585956, z: 0.5032831, w: 0.5033871}
+  m_LocalPosition: {x: -5.62, y: -0.635, z: 7.69}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -269.228, y: 546.275, z: -443.82098}
+--- !u!114 &3091399296366133241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335469186825720034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 9b41c25a8d649ce459fe4e6447607724, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 0.9841736, y: 0.8910581}
+  m_UVBias: {x: 0.06185582, y: 0.113541834}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.24207002, y: 0, z: 0.00691881}
+  m_Size: {x: 2.01, y: 2.54, z: 0.73}
+  m_FadeFactor: 0.493
+--- !u!1 &8517742107081192902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7339326970070942030}
+  - component: {fileID: 3685248785598511513}
+  m_Layer: 0
+  m_Name: Decal blod(3)   (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7339326970070942030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517742107081192902}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.652532, y: -0.2541326, z: 0.24835825, w: -0.6692809}
+  m_LocalPosition: {x: 10.51, y: -0.96, z: 5.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -268.565, y: 579.83704, z: -181.792}
+--- !u!114 &3685248785598511513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517742107081192902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: e443cfca13a9ab244a9de1bb5e75041e, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 1
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1.0504615, y: 0.56347823}
+  m_UVBias: {x: -0.12957385, y: 0.23050685}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -1.0540581, y: 0.29524922, z: 0.06262803}
+  m_Size: {x: 5.9595757, y: 4.9170957, z: 2.2199192}
+  m_FadeFactor: 0.554
+--- !u!1 &8598914031616088789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2502360003075525589}
+  - component: {fileID: 8622624176661333203}
+  m_Layer: 0
+  m_Name: Decal blod(3)   (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2502360003075525589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598914031616088789}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.48946583, y: -0.51013273, z: 0.49789777, w: -0.5022805}
+  m_LocalPosition: {x: 0.9, y: -0.91, z: 4.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -268.565, y: 629.141, z: -181.792}
+--- !u!114 &8622624176661333203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598914031616088789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: e443cfca13a9ab244a9de1bb5e75041e, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 1
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1.0053644, y: 1.0260578}
+  m_UVBias: {x: -0.08447675, y: -0.021107037}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -1.2320095, y: -1.3667102, z: 0.007297963}
+  m_Size: {x: 5.2976904, y: 14.011979, z: 0.77}
+  m_FadeFactor: 0.436
+--- !u!1 &8793451659796240838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6454479665915875954}
+  - component: {fileID: 3332136826379975586}
+  m_Layer: 0
+  m_Name: Decal blod(3)   (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6454479665915875954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793451659796240838}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.48946583, y: -0.51013273, z: 0.49789777, w: -0.5022805}
+  m_LocalPosition: {x: -14.848, y: -1.074, z: 6.183}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4710210526421469647}
+  m_LocalEulerAnglesHint: {x: -268.565, y: 629.141, z: -181.792}
+--- !u!114 &3332136826379975586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793451659796240838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: e443cfca13a9ab244a9de1bb5e75041e, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 1
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1.0053644, y: 1.4919522}
+  m_UVBias: {x: -0.08447675, y: -0.4340341}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.7842405, y: -1.2455597, z: 0.007297963}
+  m_Size: {x: 3.100903, y: 7.519621, z: 0.77}
+  m_FadeFactor: 0.436
