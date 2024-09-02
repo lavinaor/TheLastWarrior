@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float walkSpeed;
     [SerializeField] float sprintSpeed;
     [SerializeField] float sprintSpeedStamina;
+    private float speed;
     public bool canMove;
     [SerializeField] float groundDrag;
     [SerializeField] Transform orientation;
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
-    [SerializeField] KeyCode sprintKey = KeyCode.LeftControl;
+    [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     [SerializeField] float playerHeight;
@@ -60,6 +61,15 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
         MyInput();
+
+        speed = walkSpeed;
+        if (Input.GetKey(sprintKey) && PlayerStats.Stamina > sprintSpeedStamina)
+        {
+            speed = sprintSpeed;
+            PlayerStats.Stamina -= sprintSpeedStamina;
+            PlayerStats.UpdateHealthUI();
+        }
+
         SpeedControl();
 
         // rotate orientation
@@ -81,9 +91,25 @@ public class PlayerMovement : MonoBehaviour
         var animDir = transform.InverseTransformDirection(dir);
         var isFacingMoveDirection = Vector3.Dot(dir, orientation.forward) > .5f;
 
-/*        animator.SetFloat("Horizontal", isFacingMoveDirection ? rb.velocity.x : 0, .1f, Time.deltaTime);
-        animator.SetFloat("Vertical", isFacingMoveDirection ? rb.velocity.z : 0, .1f, Time.deltaTime);*/
-        animator.SetFloat("velocity", isFacingMoveDirection ? (rb.velocity.magnitude / sprintSpeed) : 0, .1f, Time.deltaTime);
+        /*        animator.SetFloat("Horizontal", isFacingMoveDirection ? rb.velocity.x : 0, .1f, Time.deltaTime);
+                animator.SetFloat("Vertical", isFacingMoveDirection ? rb.velocity.z : 0, .1f, Time.deltaTime);*/
+        /*animator.SetFloat("velocity", isFacingMoveDirection ? (rb.velocity.magnitude / sprintSpeed) : 0, .1f, Time.deltaTime);*/
+        float currentSpeed = rb.velocity.magnitude;
+
+        float blendValue;
+        if (currentSpeed < walkSpeed)
+        {
+            blendValue = Mathf.Lerp(0f, 0.5f, currentSpeed / walkSpeed);
+        }
+        else
+        {
+            float normalizedSpeed = (currentSpeed - walkSpeed) / (sprintSpeed - walkSpeed);
+            blendValue = Mathf.Lerp(0.5f, 1f, normalizedSpeed);
+        }
+
+        animator.SetFloat("velocity", isFacingMoveDirection ? blendValue : 0f, 0.1f, Time.deltaTime);
+
+
     }
 
     private void FixedUpdate()
@@ -114,14 +140,6 @@ public class PlayerMovement : MonoBehaviour
             // calculate movement direction
             moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-            float speed = walkSpeed;
-            if (Input.GetKey(sprintKey) && PlayerStats.Stamina > sprintSpeedStamina)
-            {
-                speed = sprintSpeed;
-                PlayerStats.Stamina -= sprintSpeedStamina;
-                PlayerStats.UpdateHealthUI();
-            }
-
             // on ground
             if (grounded)
                 rb.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
@@ -137,9 +155,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         // limit velocity if needed
-        if (flatVel.magnitude > walkSpeed)
+        if (flatVel.magnitude > speed)
         {
-            Vector3 limitedVel = flatVel.normalized * walkSpeed;
+            Vector3 limitedVel = flatVel.normalized * speed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
     }
