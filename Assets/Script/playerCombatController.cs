@@ -26,6 +26,8 @@ public class playerCombatController : MonoBehaviour
 
     private List<IAction> actions = new List<IAction>();
 
+    [SerializeField] KeyCode attackA = KeyCode.C;
+    [SerializeField] KeyCode attackB = KeyCode.V;
     [SerializeField] KeyCode attack1 = KeyCode.Alpha1;
     [SerializeField] KeyCode attack2 = KeyCode.Alpha2;
     [SerializeField] KeyCode attack3 = KeyCode.Alpha3;
@@ -52,13 +54,13 @@ public class playerCombatController : MonoBehaviour
     void Update()
     {
         // when to use first attack
-        if (Input.GetMouseButton(0) && !isAttackung)
+        if (Input.GetKeyDown(attackA) && !isAttackung)
         {
             actions[0].ExecuteAction();
         }
 
         // when to use second attack
-        if (Input.GetMouseButtonDown(1) && !isAttackung)
+        if (Input.GetKeyDown(attackB) && !isAttackung)
         {
             if (actions.Count > 1)
             {

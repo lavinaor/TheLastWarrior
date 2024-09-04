@@ -5,12 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-[CreateAssetMenu(fileName = "slotSetingsBase", menuName = "custom/slotSetingsBase")]
+[CreateAssetMenu(fileName = "slotSetingsBase", menuName = "ScriptableObjects/slotSetingsBase")]
 public class slotSetingsBase : ScriptableObject
 {
     public string Name;
-    [SerializeField] float Cooldown;
+    public float AttackTime = 1f;
+    public float AttackCooldown;
     public Image CooldownImageFill;
     public TMP_Text CooldownText;
-    [SerializeField] bool canMoveWhileAttack = true;
+    public bool cantEnterWhileAttack = true;
+    public bool cantMoveWhileAttack = true;
 }

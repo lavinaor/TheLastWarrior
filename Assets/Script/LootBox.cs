@@ -15,27 +15,37 @@ public class LootBox : MonoBehaviour
     [SerializeField] Camera mainCamera; // Reference to the main camera
 
     private bool playerInRange = false;
+    private bool a = false;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         interactionText.gameObject.SetActive(false); // Hide the interaction text at the start
+        interactionText.text = "Press 'G' to open";
     }
 
     void Update()
     {
         playerInRange = Physics.CheckSphere(transform.position, activationRadius, playerLayerMask);
-
         if (playerInRange && IsBoxOnScreen())
         {
             if (!opend)
             {
-                StartCoroutine(InteractebalText());
+                interactionText.gameObject.SetActive(true);
+                a = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && !opend)
+            if (Input.GetKeyDown(KeyCode.G) && !opend)
             {
                 OpenLootBox();
+            }
+        }
+        else
+        {
+            if (a == true)
+            {
+                interactionText.gameObject.SetActive(false);
+                a = false;
             }
         }
     }
@@ -45,7 +55,7 @@ public class LootBox : MonoBehaviour
         interactionText.gameObject.SetActive(true);
         interactionText.text = "Press 'E' to open";
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
 
         if (!playerInRange && !IsBoxOnScreen())
             interactionText.gameObject.SetActive(false);
