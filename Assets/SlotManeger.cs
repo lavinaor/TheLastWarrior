@@ -6,7 +6,14 @@ using UnityEngine.UI;
 
 public class SlotManeger : MonoBehaviour
 {
-    public slotSetingsBase slotSetings;
+    public string Name;
+    public float AttackTime = 1f;
+    public float AttackCooldown;
+    public Image CooldownImageFill;
+    public TMP_Text CooldownText;
+    public bool canEnterWhileAttack = false;
+    public bool cantMoveWhileAttack = true;
+    public bool isActive = false;
     public IAction action;
 
     private float AttackInCooldown;
@@ -26,25 +33,29 @@ public class SlotManeger : MonoBehaviour
     }
     public void ExecuteSlotAction()
     {
-        if (AttackInCooldown <= 0f)
+        if (AttackInCooldown <= 0f && !canEnterWhileAttack)
         {
             action.ExecuteAction();
-            Invoke("StartCooldown", slotSetings.AttackTime);
+            Invoke("StartCooldown", AttackTime);
+        }
+        if (canEnterWhileAttack && isActive)
+        {
+            action.ExecuteAction();
         }
     }
 
     private void StartCooldown()
     {
-        AttackInCooldown = slotSetings.AttackCooldown + slotSetings.AttackTime;
+        AttackInCooldown = AttackCooldown + AttackTime;
         UpdateCooldownUI();
     }
 
     public void UpdateCooldownUI()
     {
-        slotSetings.CooldownImageFill.fillAmount = slotSetings.AttackCooldown * 10 - AttackInCooldown * 10;
-        if (AttackInCooldown > 0 && slotSetings.AttackCooldown > 1)
-            slotSetings.CooldownText.text = AttackInCooldown.ToString("0");
+        CooldownImageFill.fillAmount = AttackCooldown * 10 - AttackInCooldown * 10;
+        if (AttackInCooldown > 0 && AttackCooldown > 1)
+            CooldownText.text = AttackInCooldown.ToString("0");
         else
-            slotSetings.CooldownText.text = new string(" ");
+            CooldownText.text = new string(" ");
     }
 }
