@@ -35,15 +35,18 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (currentUI == UI.exitUI)
+            if (currentUI == UI.exitUI && currentUI != UI.deathUI)
             {
                 currentUI = UI.ux;
                 ChangeActiveUI();
             }
             else
             {
-                currentUI = UI.exitUI;
-                ChangeActiveUI();
+                if (currentUI != UI.deathUI)
+                {
+                    currentUI = UI.exitUI;
+                    ChangeActiveUI();
+                }
             }
         }
     }
@@ -69,7 +72,6 @@ public class UIManager : MonoBehaviour
     {
         ux.SetActive(false);
         exitUI.SetActive(false);
-        deathUI.SetActive(false);
         settingsUI.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
