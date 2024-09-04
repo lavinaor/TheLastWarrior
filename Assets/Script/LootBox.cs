@@ -21,7 +21,7 @@ public class LootBox : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         interactionText.gameObject.SetActive(false); // Hide the interaction text at the start
-        interactionText.text = "Press 'E' to open";
+        interactionText.text = "Press 'G' to open";
     }
 
     void Update()
@@ -35,7 +35,7 @@ public class LootBox : MonoBehaviour
                 a = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && !opend)
+            if (Input.GetKeyDown(KeyCode.G) && !opend)
             {
                 OpenLootBox();
             }
