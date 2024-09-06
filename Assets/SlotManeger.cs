@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SlotManeger : MonoBehaviour
 {
     public string Name;
+    public KeyCode slotKeybind = KeyCode.Alpha0;
     public float AttackTime = 1f;
     public float AttackCooldown;
     public Image CooldownImageFill;
@@ -14,6 +15,7 @@ public class SlotManeger : MonoBehaviour
     public bool canEnterWhileAttack = false;
     public bool cantMoveWhileAttack = true;
     public bool isActive = false;
+    public GameObject actionObject;
     public IAction action;
 
     private float AttackInCooldown;
@@ -21,6 +23,7 @@ public class SlotManeger : MonoBehaviour
     private void Start()
     {
         UpdateCooldownUI();
+        action = actionObject.GetComponent<IAction>();
     }
 
     private void Update()
@@ -33,9 +36,14 @@ public class SlotManeger : MonoBehaviour
     }
     public void ExecuteSlotAction()
     {
+        Debug.Log("enterd " + Name);
         if (AttackInCooldown <= 0f && !canEnterWhileAttack)
         {
             action.ExecuteAction();
+            AttackInCooldown = AttackTime;
+            CooldownImageFill.color = new Color(0.75f, 0.0f, 1.0f, 1.0f);
+            UpdateCooldownUI();
+            isActive = true;
             Invoke("StartCooldown", AttackTime);
         }
         if (canEnterWhileAttack && isActive)
@@ -46,12 +54,14 @@ public class SlotManeger : MonoBehaviour
 
     private void StartCooldown()
     {
-        AttackInCooldown = AttackCooldown + AttackTime;
+        AttackInCooldown = AttackCooldown;
+        isActive = false;
         UpdateCooldownUI();
     }
 
     public void UpdateCooldownUI()
     {
+        CooldownImageFill.color = Color.white;
         CooldownImageFill.fillAmount = AttackCooldown * 10 - AttackInCooldown * 10;
         if (AttackInCooldown > 0 && AttackCooldown > 1)
             CooldownText.text = AttackInCooldown.ToString("0");

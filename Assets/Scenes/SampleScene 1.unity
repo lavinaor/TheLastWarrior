@@ -2651,6 +2651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 429390568}
   - component: {fileID: 429390569}
+  - component: {fileID: 429390570}
   m_Layer: 8
   m_Name: IAction Shock Wave Attack Player
   m_TagString: Untagged
@@ -2703,6 +2704,28 @@ MonoBehaviour:
   explosionRadius: 5
   explosionForce: 700
   explosionOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &429390570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429390567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Shock Wave
+  slotKeybind: 49
+  AttackTime: 1
+  AttackCooldown: 10
+  CooldownImageFill: {fileID: 1956026079}
+  CooldownText: {fileID: 1371847775}
+  canEnterWhileAttack: 0
+  cantMoveWhileAttack: 0
+  isActive: 0
+  actionObject: {fileID: 429390567}
 --- !u!1001 &433107386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4868,6 +4891,12 @@ MonoBehaviour:
   - {fileID: 429390567}
   - {fileID: 1044644407}
   - {fileID: 1186006759}
+  slotObjects:
+  - {fileID: 1846204270}
+  - {fileID: 1577441457}
+  - {fileID: 429390567}
+  - {fileID: 1044644407}
+  - {fileID: 1186006759}
   orientation: {fileID: 1058953445}
   PlayerObj: {fileID: 981137122}
   playerMovement: {fileID: 0}
@@ -4880,6 +4909,8 @@ MonoBehaviour:
     m_Bits: 128
   maxAngle: 45
   markerPrefab: {fileID: 416895898}
+  attackA: 99
+  attackB: 118
   attack1: 49
   attack2: 50
   attack3: 51
@@ -7451,6 +7482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1044644408}
   - component: {fileID: 1044644409}
+  - component: {fileID: 1044644412}
   - component: {fileID: 1044644411}
   - component: {fileID: 1044644410}
   m_Layer: 10
@@ -7551,6 +7583,28 @@ CapsuleCollider:
   m_Height: 2.7221365
   m_Direction: 1
   m_Center: {x: -0.00017166138, y: 0.8218579, z: -0.22875261}
+--- !u!114 &1044644412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044644407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: dash
+  slotKeybind: 50
+  AttackTime: 0.3
+  AttackCooldown: 5
+  CooldownImageFill: {fileID: 1807341939}
+  CooldownText: {fileID: 709175484}
+  canEnterWhileAttack: 0
+  cantMoveWhileAttack: 0
+  isActive: 0
+  actionObject: {fileID: 1044644407}
 --- !u!1 &1058953444
 GameObject:
   m_ObjectHideFlags: 0
@@ -8209,6 +8263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1186006760}
   - component: {fileID: 1186006763}
+  - component: {fileID: 1186006764}
   m_Layer: 8
   m_Name: Spin Attack Action  Player
   m_TagString: sword
@@ -8254,6 +8309,28 @@ MonoBehaviour:
   cantMoveWhileSpinAttack: 0
   elapsedTime: 0
   spinSpeed: 900
+--- !u!114 &1186006764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186006759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spin
+  slotKeybind: 51
+  AttackTime: 5
+  AttackCooldown: 5
+  CooldownImageFill: {fileID: 74118604}
+  CooldownText: {fileID: 1546718938}
+  canEnterWhileAttack: 1
+  cantMoveWhileAttack: 0
+  isActive: 0
+  actionObject: {fileID: 1186006759}
 --- !u!114 &1186564379 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7681866931221015788, guid: 74e7152e261fe944c9ba28ea096cb1d0, type: 3}
@@ -10647,6 +10724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1577441459}
   - component: {fileID: 1577441458}
+  - component: {fileID: 1577441460}
   m_Layer: 8
   m_Name: IAction shoot attack player
   m_TagString: Untagged
@@ -10694,6 +10772,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1119463752}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577441460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577441457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: shoot attack
+  slotKeybind: 118
+  AttackTime: 0
+  AttackCooldown: 0.5
+  CooldownImageFill: {fileID: 1302207132}
+  CooldownText: {fileID: 330241915}
+  canEnterWhileAttack: 0
+  cantMoveWhileAttack: 0
+  isActive: 0
+  actionObject: {fileID: 1577441457}
 --- !u!114 &1606884181 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1938252016045933005, guid: 74e7152e261fe944c9ba28ea096cb1d0, type: 3}
@@ -10915,7 +11015,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645912142}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.037740618, y: -0.6286261, z: 0.030565636, w: 0.7761898}
+  m_LocalRotation: {x: 0.037740618, y: -0.6286261, z: 0.030565638, w: 0.77618986}
   m_LocalPosition: {x: -126.55487, y: 53.36786, z: -17.88628}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21808,6 +21908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1846204273}
   - component: {fileID: 1846204271}
+  - component: {fileID: 1846204274}
   m_Layer: 8
   m_Name: IAction sward attack player
   m_TagString: Untagged
@@ -21850,6 +21951,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1119463752}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846204274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846204270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: swardAttack
+  slotKeybind: 99
+  AttackTime: 0.7
+  AttackCooldown: 0.1
+  CooldownImageFill: {fileID: 2097429888}
+  CooldownText: {fileID: 1632981303}
+  canEnterWhileAttack: 0
+  cantMoveWhileAttack: 0
+  isActive: 0
+  actionObject: {fileID: 1846204270}
 --- !u!1001 &1850236247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24365,63 +24488,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76862f8c1b5b95341a424aec398347f8, type: 3}
---- !u!1001 &3322356143262668804
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -46.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.995
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.88142157
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.11415171
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.2565938
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.3797699
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -23.336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 23.466
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608406152767888425, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 41.707
-      objectReference: {fileID: 0}
-    - target: {fileID: 6447040562749382895, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
-      propertyPath: m_Name
-      value: cube exploding
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 783b5f158f2c7c741b9d679486daae68, type: 3}
 --- !u!1001 &7237100602134593829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24514,7 +24580,6 @@ SceneRoots:
   - {fileID: 433107386}
   - {fileID: 74487648}
   - {fileID: 68720743}
-  - {fileID: 3322356143262668804}
   - {fileID: 3201918137816840496}
   - {fileID: 1699450528}
   - {fileID: 123956565162505718}

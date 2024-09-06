@@ -7,6 +7,11 @@ using UnityEngine;
 public class playerCombatController : MonoBehaviour
 {
     public List<GameObject> actionObjects;
+    private List<IAction> actions = new List<IAction>();
+
+    //slote test
+    public List<GameObject> slotObjects;
+    private List<SlotManeger> slotManegers = new List<SlotManeger>();
 
 
     [Header("player informashen")]
@@ -23,8 +28,6 @@ public class playerCombatController : MonoBehaviour
     public LayerMask enemyLayerMask;
     public float maxAngle = 45f;
     public GameObject markerPrefab;
-
-    private List<IAction> actions = new List<IAction>();
 
     [SerializeField] KeyCode attackA = KeyCode.C;
     [SerializeField] KeyCode attackB = KeyCode.V;
@@ -49,49 +52,69 @@ public class playerCombatController : MonoBehaviour
                 actions.Add(action);
             }
         }
+
+        // slot test
+        foreach (GameObject obj in slotObjects)
+        {
+            SlotManeger slot = obj.GetComponent<SlotManeger>();
+            if (slot != null)
+            {
+                slotManegers.Add(slot);
+            }
+        }
     }
 
     void Update()
     {
-        // when to use first attack
-        if (Input.GetKeyDown(attackA) && !isAttackung)
-        {
-            actions[0].ExecuteAction();
-        }
+        /*        // when to use first attack
+                if (Input.GetKeyDown(attackA) && !isAttackung)
+                {
+                    actions[0].ExecuteAction();
+                }
 
-        // when to use second attack
-        if (Input.GetKeyDown(attackB) && !isAttackung)
-        {
-            if (actions.Count > 1)
-            {
-                actions[1].ExecuteAction(); // הפעלת הפעולה הראשונה
-            }
-        }
+                // when to use second attack
+                if (Input.GetKeyDown(attackB) && !isAttackung)
+                {
+                    if (actions.Count > 1)
+                    {
+                        actions[1].ExecuteAction(); // הפעלת הפעולה הראשונה
+                    }
+                }
 
-        // when to use second attack
-        if (Input.GetKeyDown(attack1) && !isAttackung)
-        {
-            if (actions.Count > 2)
-            {
-                actions[2].ExecuteAction(); // הפעלת הפעולה הראשונה
-            }
-        }
+                // when to use second attack
+                if (Input.GetKeyDown(attack1) && !isAttackung)
+                {
+                    if (actions.Count > 2)
+                    {
+                        actions[2].ExecuteAction(); // הפעלת הפעולה הראשונה
+                    }
+                }
 
-        // when to use second attack
-        if (Input.GetKeyDown(attack2) && !isAttackung)
-        {
-            if (actions.Count > 3)
-            {
-                actions[3].ExecuteAction(); // הפעלת הפעולה הראשונה
-            }
-        }
+                // when to use second attack
+                if (Input.GetKeyDown(attack2) && !isAttackung)
+                {
+                    if (actions.Count > 3)
+                    {
+                        actions[3].ExecuteAction(); // הפעלת הפעולה הראשונה
+                    }
+                }
 
-        // when to use second attack
-        if (Input.GetKeyDown(attack3) && !isAttackung)
+                // when to use second attack
+                if (Input.GetKeyDown(attack3) && !isAttackung)
+                {
+                    if (actions.Count > 4)
+                    {
+                        actions[4].ExecuteAction(); // הפעלת הפעולה הראשונה
+                    }
+                }*/
+
+        // slot test
+        foreach (SlotManeger obj in slotManegers)
         {
-            if (actions.Count > 4)
+            // when to use attack
+            if (Input.GetKeyDown(obj.slotKeybind) && !isAttackung)
             {
-                actions[4].ExecuteAction(); // הפעלת הפעולה הראשונה
+                obj.ExecuteSlotAction(); //activate attack
             }
         }
 
