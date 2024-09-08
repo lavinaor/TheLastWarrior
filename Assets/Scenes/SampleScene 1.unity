@@ -2694,9 +2694,6 @@ MonoBehaviour:
   waveRadius: 2.5
   delayFromeAnimashenToShockwave: 0
   shockWaveAttackTime: 1
-  shockWaveAttackCooldown: 10
-  CooldownImageFill: {fileID: 1956026079}
-  CooldownText: {fileID: 1371847775}
   cantMoveWhileShockWaveAttack: 0
   particleSystem:
   - {fileID: 333165694}
@@ -2716,6 +2713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCombatController: {fileID: 698295198}
   Name: Shock Wave
   slotKeybind: 49
   AttackTime: 1
@@ -2723,7 +2721,6 @@ MonoBehaviour:
   CooldownImageFill: {fileID: 1956026079}
   CooldownText: {fileID: 1371847775}
   canEnterWhileAttack: 0
-  cantMoveWhileAttack: 0
   isActive: 0
   actionObject: {fileID: 429390567}
 --- !u!1001 &433107386
@@ -7526,13 +7523,11 @@ MonoBehaviour:
   endPositionOffset: 0.2
   trail: {fileID: 676426910}
   trailTime: 0.3
-  dashCooldown: 5
-  CooldownImageFill: {fileID: 1807341939}
-  CooldownText: {fileID: 709175484}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 1
   audioClip: {fileID: 8300000, guid: fc402dbe90df93e4187fafd759db7044, type: 3}
+  isActive: 0
 --- !u!54 &1044644410
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7595,6 +7590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCombatController: {fileID: 698295198}
   Name: dash
   slotKeybind: 50
   AttackTime: 0.3
@@ -7602,7 +7598,6 @@ MonoBehaviour:
   CooldownImageFill: {fileID: 1807341939}
   CooldownText: {fileID: 709175484}
   canEnterWhileAttack: 0
-  cantMoveWhileAttack: 0
   isActive: 0
   actionObject: {fileID: 1044644407}
 --- !u!1 &1058953444
@@ -8302,7 +8297,7 @@ MonoBehaviour:
   spinAttackStaminaCostPerSecond: 20
   spinAttackMaxDuration: 5
   isTherSpinAttackMaxDuration: 1
-  spinAttackCooldown: 5
+  spinAttackCooldown: 0
   spinAttackInCooldown: 0
   CooldownImageFill: {fileID: 74118604}
   CooldownText: {fileID: 1546718938}
@@ -8321,6 +8316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCombatController: {fileID: 698295198}
   Name: Spin
   slotKeybind: 51
   AttackTime: 5
@@ -8328,7 +8324,6 @@ MonoBehaviour:
   CooldownImageFill: {fileID: 74118604}
   CooldownText: {fileID: 1546718938}
   canEnterWhileAttack: 1
-  cantMoveWhileAttack: 0
   isActive: 0
   actionObject: {fileID: 1186006759}
 --- !u!114 &1186564379 stripped
@@ -10752,9 +10747,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 247
   shotAttackTime: 0
-  shotAttackCooldown: 0.5
-  CooldownImageFill: {fileID: 1302207132}
-  CooldownText: {fileID: 330241915}
   cantMoveWhileShotAttack: 0
   audioClip: {fileID: 8300000, guid: bc3c56b1bfc1dc145a269b69821bb020, type: 3}
 --- !u!4 &1577441459
@@ -10784,6 +10776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCombatController: {fileID: 698295198}
   Name: shoot attack
   slotKeybind: 118
   AttackTime: 0
@@ -10791,7 +10784,6 @@ MonoBehaviour:
   CooldownImageFill: {fileID: 1302207132}
   CooldownText: {fileID: 330241915}
   canEnterWhileAttack: 0
-  cantMoveWhileAttack: 0
   isActive: 0
   actionObject: {fileID: 1577441457}
 --- !u!114 &1606884181 stripped
@@ -21930,10 +21922,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCombatController: {fileID: 698295198}
   swardAttackTime: 0.7
-  swardAttackCooldown: 0.1
-  swardAttackInCooldown: 0
-  CooldownImageFill: {fileID: 2097429888}
-  CooldownText: {fileID: 1632981303}
   cantMoveWhileSwardAttack: 0
   audioClip: {fileID: 8300000, guid: c9ce7d411f5b76245b8314c60aab1f50, type: 3}
 --- !u!4 &1846204273
@@ -21963,6 +21951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23520c16966c2294ca899f1bc739f3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCombatController: {fileID: 698295198}
   Name: swardAttack
   slotKeybind: 99
   AttackTime: 0.7
@@ -21970,7 +21959,6 @@ MonoBehaviour:
   CooldownImageFill: {fileID: 2097429888}
   CooldownText: {fileID: 1632981303}
   canEnterWhileAttack: 0
-  cantMoveWhileAttack: 0
   isActive: 0
   actionObject: {fileID: 1846204270}
 --- !u!1001 &1850236247
