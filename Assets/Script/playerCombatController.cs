@@ -6,10 +6,7 @@ using UnityEngine;
 
 public class playerCombatController : MonoBehaviour
 {
-    public List<GameObject> actionObjects;
-    private List<IAction> actions = new List<IAction>();
-
-    //slote test
+    //slote list
     public List<GameObject> slotObjects;
     private List<SlotManeger> slotManegers = new List<SlotManeger>();
 
@@ -44,16 +41,7 @@ public class playerCombatController : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerStats = GetComponent<PlayerStats>();
 
-        foreach (GameObject obj in actionObjects)
-        {
-            IAction action = obj.GetComponent<IAction>();
-            if (action != null)
-            {
-                actions.Add(action);
-            }
-        }
-
-        // slot test
+        // fils the slots
         foreach (GameObject obj in slotObjects)
         {
             SlotManeger slot = obj.GetComponent<SlotManeger>();
@@ -66,49 +54,7 @@ public class playerCombatController : MonoBehaviour
 
     void Update()
     {
-        /*        // when to use first attack
-                if (Input.GetKeyDown(attackA) && !isAttackung)
-                {
-                    actions[0].ExecuteAction();
-                }
-
-                // when to use second attack
-                if (Input.GetKeyDown(attackB) && !isAttackung)
-                {
-                    if (actions.Count > 1)
-                    {
-                        actions[1].ExecuteAction(); // הפעלת הפעולה הראשונה
-                    }
-                }
-
-                // when to use second attack
-                if (Input.GetKeyDown(attack1) && !isAttackung)
-                {
-                    if (actions.Count > 2)
-                    {
-                        actions[2].ExecuteAction(); // הפעלת הפעולה הראשונה
-                    }
-                }
-
-                // when to use second attack
-                if (Input.GetKeyDown(attack2) && !isAttackung)
-                {
-                    if (actions.Count > 3)
-                    {
-                        actions[3].ExecuteAction(); // הפעלת הפעולה הראשונה
-                    }
-                }
-
-                // when to use second attack
-                if (Input.GetKeyDown(attack3) && !isAttackung)
-                {
-                    if (actions.Count > 4)
-                    {
-                        actions[4].ExecuteAction(); // הפעלת הפעולה הראשונה
-                    }
-                }*/
-
-        // slot test
+        // slot activate the slote that got prest
         foreach (SlotManeger obj in slotManegers)
         {
             // when to use attack
