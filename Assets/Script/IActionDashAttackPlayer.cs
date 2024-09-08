@@ -16,48 +16,20 @@ public class IActionDashAttackPlayer : MonoBehaviour, IAction
     [SerializeField] float endPositionOffset = 0.1f;
     [SerializeField] GameObject trail;
     [SerializeField] float trailTime;
-    [SerializeField] float dashCooldown = 5f;
-    private float dashInCooldown = 0f;
-    public Image CooldownImageFill;
-    public TMP_Text CooldownText;
     [SerializeField] LayerMask obstacleMask;
     [SerializeField] AudioClip audioClip;
-
-    //in programe atack bool
-    private bool isAttackung = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        UpdateCooldownUI();
-    }
-
-    private void Update()
-    {
-        if (dashInCooldown > 0f)
-        {
-            dashInCooldown -= Time.deltaTime;
-            UpdateCooldownUI();
-            if (dashInCooldown < (dashCooldown - trailTime))
-            {
-                trail.SetActive(false);
-            }
-        }
-    }
+    [SerializeField] bool isActive;
 
     public void ExecuteAction()
     {
-        if (dashInCooldown <= 0f)
-        {
-            StartCoroutine(DashAttack());
-        }
+        StartCoroutine(DashAttack());
     }
     IEnumerator DashAttack()
     {
         float dashTime = dashDistance / dashSpeed;
         float elapsedTime = 0f;
 
-        isAttackung = true;
+        isActive = true;
         trail.SetActive(true);
         playerCombatController.isAttackung = true;
         playerCombatController.animator.SetBool("Swordforward", true);
@@ -85,25 +57,16 @@ public class IActionDashAttackPlayer : MonoBehaviour, IAction
 
         playerCombatController.transform.position = endPosition;
         playerCombatController.isAttackung = false;
-        isAttackung = false;
         playerCombatController.animator.SetBool("Swordforward", false);
+        isActive = false;
 
-        dashInCooldown = dashCooldown;
-        UpdateCooldownUI();
-    }
-
-    public void UpdateCooldownUI()
-    {
-        CooldownImageFill.fillAmount = (dashCooldown - dashInCooldown) / dashCooldown;
-        if (dashInCooldown > 0)
-            CooldownText.text = dashInCooldown.ToString("0");
-        else
-            CooldownText.text = new string(" ");
+        new WaitForSeconds(trailTime);
+        trail.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other != null && other.GetComponent<EnemyHealth>() && isAttackung)
+        if (other != null && other.GetComponent<EnemyHealth>() && isActive)
         {
             var enemyHealth = other.GetComponent<EnemyHealth>();
             enemyHealth.TakeDamage(Dameg);

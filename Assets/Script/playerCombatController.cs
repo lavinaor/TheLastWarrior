@@ -112,7 +112,7 @@ public class playerCombatController : MonoBehaviour
         foreach (SlotManeger obj in slotManegers)
         {
             // when to use attack
-            if (Input.GetKeyDown(obj.slotKeybind) && !isAttackung)
+            if (Input.GetKeyDown(obj.slotKeybind))
             {
                 obj.ExecuteSlotAction(); //activate attack
             }

@@ -15,64 +15,41 @@ public class ShootAttackIActionPlayer : MonoBehaviour, IAction
     public float projectileSpeed = 20f;
     public LayerMask obstacleLayerMask;
     [SerializeField] float shotAttackTime = 1f;
-    [SerializeField] float shotAttackCooldown;
-    private float shotAttackInCooldown = 0f;
-    public Image CooldownImageFill;
-    public TMP_Text CooldownText;
     [SerializeField] bool cantMoveWhileShotAttack = true;
     [SerializeField] AudioClip audioClip;
 
-    private void Start()
-    {
-        UpdateCooldownUI();
-    }
-    private void Update()
-    {
-        if (shotAttackInCooldown > 0f)
-        {
-            shotAttackInCooldown -= Time.deltaTime;
-            UpdateCooldownUI();
-        }
-    }
     public void ExecuteAction()
     {
         StartCoroutine(shotAttack());
     }
     IEnumerator shotAttack()
     {
-        if (shotAttackInCooldown <= 0)
+        //start attack
+        playerCombatController.isAttackung = true;
+        if (cantMoveWhileShotAttack)
+            playerCombatController.playerMovement.canMove = false;
+        playerCombatController.animator.Play("shotAttack");
+
+        //end attack
+        yield return new WaitForSeconds(shotAttackTime);
+
+        // play sound FX 
+        SoundFXManager.Instance.PlaySoundFXClip(audioClip, transform, 0.5f);
+
+        // Find the best target to shoot at
+        Vector3 targetPoint = FindBestTarget();
+        if (targetPoint != Vector3.zero)
         {
-            //start attack
-            playerCombatController.isAttackung = true;
-            if (cantMoveWhileShotAttack)
-                playerCombatController.playerMovement.canMove = false;
-            playerCombatController.animator.Play("shotAttack");
-
-            //end attack
-            yield return new WaitForSeconds(shotAttackTime);
-
-            // play sound FX 
-            SoundFXManager.Instance.PlaySoundFXClip(audioClip, transform, 0.5f);
-
-            // Find the best target to shoot at
-            Vector3 targetPoint = FindBestTarget();
-            if (targetPoint != Vector3.zero)
-            {
-                ShootAtTarget(targetPoint);
-            }
-            else
-            {
-                ShootForward();
-            }
-
-            playerCombatController.isAttackung = false;
-            if (cantMoveWhileShotAttack)
-                playerCombatController.playerMovement.canMove = true;
-
-            //start culdown
-            shotAttackInCooldown = shotAttackCooldown;
-            UpdateCooldownUI();
+            ShootAtTarget(targetPoint);
         }
+        else
+        {
+            ShootForward();
+        }
+
+        playerCombatController.isAttackung = false;
+        if (cantMoveWhileShotAttack)
+            playerCombatController.playerMovement.canMove = true;
     }
 
     Vector3 FindBestTarget()
@@ -129,17 +106,6 @@ public class ShootAttackIActionPlayer : MonoBehaviour, IAction
         }
 
         projectile.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
-    }
-
-    public void UpdateCooldownUI()
-    {
-        CooldownImageFill.fillAmount = shotAttackCooldown * 10 - shotAttackInCooldown * 10;
-        CooldownText.text = shotAttackInCooldown.ToString("0");
-
-        if (shotAttackInCooldown > 0 && shotAttackCooldown > 1)
-            CooldownText.text = shotAttackInCooldown.ToString("0");
-        else
-            CooldownText.text = new string(" ");
     }
 
     // Gizmo to show the shooting angle

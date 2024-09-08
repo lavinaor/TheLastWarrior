@@ -24,20 +24,6 @@ public class SpinAttackActionPlayer : MonoBehaviour, IAction
     [SerializeField] float elapsedTime = 0f;
     [SerializeField] float spinSpeed = 360f;
 
-    private void Start()
-    {
-        UpdateCooldownUI();
-    }
-
-    private void Update()
-    {
-        if (spinAttackInCooldown > 0f)
-        {
-            spinAttackInCooldown -= Time.deltaTime;
-            UpdateCooldownUI();
-        }
-    }
-
     public void ExecuteAction()
     {
 
@@ -80,7 +66,6 @@ public class SpinAttackActionPlayer : MonoBehaviour, IAction
             }
 
             elapsedTime += Time.deltaTime;
-            UpdateCooldownUI();
             if (elapsedTime >= spinAttackMaxDuration && isTherSpinAttackMaxDuration)
             {
                 elapsedTime = 0f;
@@ -107,32 +92,5 @@ public class SpinAttackActionPlayer : MonoBehaviour, IAction
         playerCombatController.animator.Play("Blend Tree 2", 1);
         playerCombatController.isAttackung = false;
         //playerCombatController.animator.CrossFade("Idle", .2f); // Transition back to idle or any other state
-
-        //start culdown
-        spinAttackInCooldown = spinAttackCooldown;
-        UpdateCooldownUI();
     }
-
-    public void UpdateCooldownUI()
-    {
-        if (elapsedTime > 0 || spinAttackInCooldown > 0)
-        {
-            if (isSpinning)
-            {
-                // Change color to indicate that the attack is active
-                CooldownImageFill.color = new Color(0.75f, 0.0f, 1.0f, 1.0f);
-                CooldownImageFill.fillAmount = spinAttackMaxDuration / elapsedTime;
-                CooldownText.text = elapsedTime.ToString("0");
-            }
-            else
-            {
-                CooldownImageFill.color = Color.white;
-                CooldownImageFill.fillAmount = spinAttackCooldown - spinAttackInCooldown;
-                CooldownText.text = spinAttackInCooldown.ToString("0");
-            }
-        }
-        else
-            CooldownText.text = new string(" ");
-    }
-
 }

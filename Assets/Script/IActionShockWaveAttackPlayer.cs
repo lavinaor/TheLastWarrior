@@ -15,36 +15,15 @@ public class IActionShockWaveAttackPlayer : MonoBehaviour, IAction
     [SerializeField] float waveRadius = 5f;
     [SerializeField] float delayFromeAnimashenToShockwave = 3.0f;
     [SerializeField] float shockWaveAttackTime = 1f;
-    [SerializeField] float shockWaveAttackCooldown;
-    private float shockWaveAttackInCooldown = 0f;
-    public Image CooldownImageFill;
-    public TMP_Text CooldownText;
     [SerializeField] bool cantMoveWhileShockWaveAttack = true;
     [SerializeField] ParticleSystem[] particleSystem = new ParticleSystem[0];
     public float explosionRadius = 5f;
     public float explosionForce = 700f;
     public Vector3 explosionOffset = Vector3.zero;
 
-    private void Start()
-    {
-        UpdateCooldownUI();
-    }
-
-    private void Update()
-    {
-        if (shockWaveAttackInCooldown > 0f)
-        {
-            shockWaveAttackInCooldown -= Time.deltaTime;
-            UpdateCooldownUI();
-        }
-    }
-
     public void ExecuteAction()
     {
-        if (shockWaveAttackInCooldown <= 0f)
-        {
-            StartCoroutine(shockWaveAttack());
-        }
+        StartCoroutine(shockWaveAttack());
     }
 
     IEnumerator shockWaveAttack()
@@ -81,10 +60,6 @@ public class IActionShockWaveAttackPlayer : MonoBehaviour, IAction
         playerCombatController.isAttackung = false;
         if (cantMoveWhileShockWaveAttack)
             playerCombatController.playerMovement.canMove = true;
-
-        //start culdown
-        shockWaveAttackInCooldown = shockWaveAttackCooldown;
-        UpdateCooldownUI();
     }
 
     void Explode()
@@ -109,15 +84,6 @@ public class IActionShockWaveAttackPlayer : MonoBehaviour, IAction
                 rb.AddExplosionForce(explosionForce, explosionPosition, explosionRadius);
             }
         }
-    }
-
-    public void UpdateCooldownUI()
-    {
-        CooldownImageFill.fillAmount = (shockWaveAttackCooldown - shockWaveAttackInCooldown) / shockWaveAttackCooldown;
-        if (shockWaveAttackInCooldown > 0)
-            CooldownText.text = shockWaveAttackInCooldown.ToString("0");
-        else
-            CooldownText.text = new string(" ");
     }
 
     private void OnDrawGizmosSelected()

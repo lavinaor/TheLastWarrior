@@ -10,33 +10,12 @@ public class SwardAttackIActionPlayer : MonoBehaviour, IAction
 
     [Header("sward attack info")]
     [SerializeField] float swardAttackTime = 1f;
-    [SerializeField] float swardAttackCooldown;
-    [SerializeField] private float swardAttackInCooldown = 0f;
-    public Image CooldownImageFill;
-    public TMP_Text CooldownText;
     [SerializeField] bool cantMoveWhileSwardAttack = true;
     [SerializeField] AudioClip audioClip;
 
-    private void Start()
-    {
-        UpdateCooldownUI();
-    }
-
-    private void Update()
-    {
-        if (swardAttackInCooldown > 0f)
-        {
-            swardAttackInCooldown -= Time.deltaTime;
-            UpdateCooldownUI();
-        }
-    }
-
     public void ExecuteAction()
     {
-        if (swardAttackInCooldown <= 0f)
-        {
-            StartCoroutine(SwardAttack());
-        }
+        StartCoroutine(SwardAttack());
     }
 
     IEnumerator SwardAttack()
@@ -55,17 +34,5 @@ public class SwardAttackIActionPlayer : MonoBehaviour, IAction
         playerCombatController.isAttackung = false;
         if (cantMoveWhileSwardAttack)
             playerCombatController.playerMovement.canMove = true;
-
-        //start culdown
-        swardAttackInCooldown = swardAttackCooldown;
-        UpdateCooldownUI();
-    }
-    public void UpdateCooldownUI()
-    {
-        CooldownImageFill.fillAmount = swardAttackCooldown * 10 - swardAttackInCooldown * 10;
-        if (swardAttackInCooldown > 0 && swardAttackCooldown > 1)
-            CooldownText.text = swardAttackInCooldown.ToString("0");
-        else
-            CooldownText.text = new string(" ");
     }
 }
