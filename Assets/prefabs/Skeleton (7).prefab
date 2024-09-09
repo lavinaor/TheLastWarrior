@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCombatController: {fileID: 1181294227541749395}
   swardAttackTime: 2
-  swardAttackCooldown: 1
+  swardAttackCooldown: 0.1
   swardAttackInCooldown: 0
   audioClip: {fileID: 8300000, guid: 57e0e67a2976feb40947bbf6eb33681f, type: 3}
 --- !u!114 &208698598804502652
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca19e0edefbd8744f8749c2258d319bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 480
+  health: 300
   invincible: 0
   hitTime: 2
   deathTime: 7
