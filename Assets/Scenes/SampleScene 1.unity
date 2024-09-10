@@ -3097,51 +3097,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756d65162af0294418659dd67574a936, type: 3}
---- !u!1 &409560868 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 546874661387524873, guid: 7256d626fad4dad4fa31aca344e95fa0, type: 3}
-  m_PrefabInstance: {fileID: 1723374724}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &409560869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 319524570920465991, guid: 7256d626fad4dad4fa31aca344e95fa0, type: 3}
   m_PrefabInstance: {fileID: 1723374724}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &409560870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 409560868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5938c579c2baf524ea7ce6ee4f3a42e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dameg: 70
-  player: {fileID: 698295191}
---- !u!65 &409560873
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 409560868}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.20591499, y: 2.399384, z: 0.11122085}
-  m_Center: {x: 0.0050234264, y: -1.2955587, z: 0.000006584576}
 --- !u!1 &416895898
 GameObject:
   m_ObjectHideFlags: 0
@@ -3297,7 +3257,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  waveRadius: 2.5
+  waveRadius: 3.85
   delayFromeAnimashenToShockwave: 0
   shockWaveAttackTime: 1
   cantMoveWhileShockWaveAttack: 0
@@ -3323,7 +3283,7 @@ MonoBehaviour:
   Name: Shock Wave
   slotKeybind: 49
   AttackTime: 1
-  AttackCooldown: 10
+  AttackCooldown: 5
   CooldownImageFill: {fileID: 1956026079}
   CooldownText: {fileID: 1371847775}
   canEnterWhileAttack: 0
@@ -3679,7 +3639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 1933688486}
-  m_PathPosition: 1.0110587
+  m_PathPosition: 1.0094975
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -5303,8 +5263,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660819272}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29785502, y: -0.0005773747, z: 0.00018015083, w: 0.95461094}
-  m_LocalPosition: {x: -262.2712, y: 38.689903, z: 3.47441}
+  m_LocalRotation: {x: 0.32999524, y: 0.000320245, z: -0.00011195051, w: 0.94398254}
+  m_LocalPosition: {x: -262.28564, y: 38.689716, z: 3.474183}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5872,7 +5832,7 @@ Transform:
   m_GameObject: {fileID: 698295191}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -61.06, y: 0.655, z: 8.03}
+  m_LocalPosition: {x: -61.06, y: 0.655, z: 6.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6186,7 +6146,7 @@ MonoBehaviour:
   Name: dash
   slotKeybind: 102
   AttackTime: 0.3
-  AttackCooldown: 5
+  AttackCooldown: 3
   CooldownImageFill: {fileID: 1033627929}
   CooldownText: {fileID: 552423594}
   canEnterWhileAttack: 0
@@ -6205,7 +6165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCombatController: {fileID: 698295198}
-  Distance: -5
+  Distance: 5
   Speed: 20
   endPositionOffset: 0.2
   trail: {fileID: 676426910}
@@ -7021,6 +6981,18 @@ PrefabInstance:
       value: 0.3003244
       objectReference: {fileID: 0}
     - target: {fileID: 1008449855816649363, guid: 7dcf4fb78a2617d48927a931b0f296f7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6060024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008449855816649363, guid: 7dcf4fb78a2617d48927a931b0f296f7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6060024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008449855816649363, guid: 7dcf4fb78a2617d48927a931b0f296f7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6060024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008449855816649363, guid: 7dcf4fb78a2617d48927a931b0f296f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.892
       objectReference: {fileID: 0}
@@ -7035,6 +7007,18 @@ PrefabInstance:
     - target: {fileID: 1200727875807713753, guid: 7dcf4fb78a2617d48927a931b0f296f7, type: 3}
       propertyPath: m_Name
       value: shock wave
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531133051427067515, guid: 7dcf4fb78a2617d48927a931b0f296f7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6060024
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531133051427067515, guid: 7dcf4fb78a2617d48927a931b0f296f7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6060024
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531133051427067515, guid: 7dcf4fb78a2617d48927a931b0f296f7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6060024
       objectReference: {fileID: 0}
     - target: {fileID: 2531133051427067515, guid: 7dcf4fb78a2617d48927a931b0f296f7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7705,7 +7689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858602311}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.115845025, y: -0.8193962, z: 0.17831676, w: 0.53232783}
+  m_LocalRotation: {x: 0.11248735, y: -0.8263516, z: 0.17796378, w: 0.52232033}
   m_LocalPosition: {x: -227.17389, y: 50.696106, z: 27.11597}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8407,8 +8391,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29785502, y: -0.0005773747, z: 0.00018015083, w: 0.95461094}
-  m_LocalPosition: {x: -262.2712, y: 38.689903, z: 3.47441}
+  m_LocalRotation: {x: 0.32999524, y: 0.000320245, z: -0.00011195051, w: 0.94398254}
+  m_LocalPosition: {x: -262.28564, y: 38.689716, z: 3.474183}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8773,7 +8757,7 @@ Transform:
   m_GameObject: {fileID: 981817649}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -262.2809, y: 29.961372, z: 11.5001745}
+  m_LocalPosition: {x: -262.2809, y: 29.961372, z: 10.440174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8832,7 +8816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016130446}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.033781566, y: -0.6461793, z: 0.028650703, w: 0.7618992}
+  m_LocalRotation: {x: 0.033701073, y: -0.6495869, z: 0.028843215, w: 0.75899225}
   m_LocalPosition: {x: -147.05415, y: 43.51873, z: -7.5679493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9168,6 +9152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCombatController: {fileID: 698295198}
   Dameg: 100
+  DamegRadius: 1.45
   dashDistance: 7
   dashSpeed: 20
   endPositionOffset: 0.2
@@ -9178,6 +9163,9 @@ MonoBehaviour:
     m_Bits: 1
   audioClip: {fileID: 8300000, guid: fc402dbe90df93e4187fafd759db7044, type: 3}
   isActive: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!54 &1044644410
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9224,10 +9212,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.83662415
+  m_Radius: 0.5865059
   m_Height: 2.7221365
   m_Direction: 1
-  m_Center: {x: -0.00017166138, y: 0.8218579, z: -0.22875261}
+  m_Center: {x: -0.02071762, y: 0.8218579, z: -0.22875261}
 --- !u!114 &1044644412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14287,7 +14275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645912142}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03760576, y: -0.6271163, z: 0.030334968, w: 0.7774257}
+  m_LocalRotation: {x: 0.03755142, y: -0.630014, z: 0.030523416, w: 0.77507454}
   m_LocalPosition: {x: -126.55487, y: 53.36786, z: -17.88628}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14937,19 +14925,14 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.0000000543066
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1217873604742328145, guid: 7256d626fad4dad4fa31aca344e95fa0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 319524570920465991, guid: 7256d626fad4dad4fa31aca344e95fa0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 499021298}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 546874661387524873, guid: 7256d626fad4dad4fa31aca344e95fa0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 409560870}
-    - targetCorrespondingSourceObject: {fileID: 546874661387524873, guid: 7256d626fad4dad4fa31aca344e95fa0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 409560873}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7256d626fad4dad4fa31aca344e95fa0, type: 3}
 --- !u!1 &1733695992 stripped
 GameObject:
@@ -25316,6 +25299,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCombatController: {fileID: 698295198}
+  damage: 70
+  damageRadius: 3.17
+  coneAngle: 163.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
   swardAttackTime: 0.7
   cantMoveWhileSwardAttack: 0
   audioClip: {fileID: 8300000, guid: c9ce7d411f5b76245b8314c60aab1f50, type: 3}
@@ -27056,7 +27045,7 @@ Transform:
   m_GameObject: {fileID: 2114739443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -262.2809, y: 29.961372, z: 11.5001745}
+  m_LocalPosition: {x: -262.2809, y: 29.961372, z: 10.440174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

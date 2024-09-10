@@ -35,7 +35,7 @@ public class BackstepActionPlayer : MonoBehaviour, IAction
         // play sound FX 
         SoundFXManager.Instance.PlaySoundFXClip(audioClip, transform, 0.5f);
 
-        Vector3 dashDirection = playerCombatController.PlayerObj.transform.forward;
+        Vector3 dashDirection = -playerCombatController.PlayerObj.transform.forward;
         Vector3 startPosition = playerCombatController.transform.position;
         Vector3 endPosition = startPosition + dashDirection * Distance;
 
