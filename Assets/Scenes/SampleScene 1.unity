@@ -10183,7 +10183,7 @@ MonoBehaviour:
   AttackCooldown: 5
   CooldownImageFill: {fileID: 74118604}
   CooldownText: {fileID: 1546718938}
-  canEnterWhileAttack: 1
+  canEnterWhileAttack: 0
   isActive: 0
   actionObject: {fileID: 1186006759}
 --- !u!114 &1186564379 stripped
