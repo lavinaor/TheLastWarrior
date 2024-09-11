@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using static Unity.Burst.Intrinsics.X86.Sse4_2;
 
 public class EnemyCombatController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class EnemyCombatController : MonoBehaviour
     private float StartHealth;
     public GameObject ProtectedSequenceActionObject;
     private IAction ProtectedSequenceAction;
+    [SerializeField] GameObject shild;
 
     [Header("info")]
     public GameObject player;
@@ -78,7 +80,7 @@ public class EnemyCombatController : MonoBehaviour
             if ((100 / StartHealth) * EnemyHealth.health <= ProtectedSequenceHealthPresenteges[curentProtectedSequenceNumber])
             {
                 curentProtectedSequenceNumber++;
-                animator.SetBool("shilded", true);
+                shild.SetActive(true);
                 inProtectedSequence = true;
                 EnemyHealth.invincible = true;
                 EnemyHealth.TakeDamage(0f);
@@ -131,8 +133,8 @@ public class EnemyCombatController : MonoBehaviour
 
     public void EndProtectedSequence()
     {
-        animator.SetBool("shilded", false);
         inProtectedSequence = false;
+        shild.SetActive(false);
         EnemyHealth.invincible = false;
         EnemyHealth.TakeDamage(0f);
     }

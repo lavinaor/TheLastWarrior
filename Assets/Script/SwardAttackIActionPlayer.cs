@@ -59,7 +59,6 @@ public class SwardAttackIActionPlayer : MonoBehaviour, IAction
                     EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
                     if (enemyHealth != null)
                     {
-                        Debug.Log("dameg  " + enemy);
                         enemyHealth.TakeDamage(damage);
                         Debug.Log("Damage dealt to: " + enemy.name);
                     }

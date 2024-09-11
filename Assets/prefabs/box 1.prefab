@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.64651, y: 0.86741996, z: 0.53771}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 401880}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6403686012570722214}
   - component: {fileID: 3390906}
   - component: {fileID: 2337058}
-  - component: {fileID: 6532326679038209493}
+  - component: {fileID: 5185729072046003791}
   m_Layer: 0
   m_Name: box_upper
   m_TagString: Untagged
@@ -131,14 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78ead165699b48488a23299c0888048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6532326679038209493}
-  activationRadius: 5
+  opend: 0
+  animator: {fileID: 0}
+  activationRadius: 6.74
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 256
   interactionText: {fileID: 0}
   playerStats: {fileID: 0}
   mainCamera: {fileID: 0}
+  poishenIncris: 2
 --- !u!33 &3390906
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6532326679038209493
+--- !u!95 &5185729072046003791
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ public class SpinAttackActionPlayer : MonoBehaviour, IAction
     [SerializeField] playerCombatController playerCombatController;
 
     [Header("Spin attack info")]
+    [SerializeField] float damage = 10f;       
+    [SerializeField] float swordLength = 2f;  
+    [SerializeField] LayerMask enemyLayer;
     [SerializeField] float spinAttackStaminaCostPerSecond = 10f;
     [SerializeField] float spinAttackMaxDuration = 5f; // Maximum duration if stamina is not depleted
     [SerializeField] bool isTherSpinAttackMaxDuration = true;
@@ -23,13 +26,13 @@ public class SpinAttackActionPlayer : MonoBehaviour, IAction
     [SerializeField] bool cantMoveWhileSpinAttack = true;
     [SerializeField] float elapsedTime = 0f;
     [SerializeField] float spinSpeed = 360f;
+    float currentRotation = 0f;
+    [SerializeField] int spinsBeforeReset = 2;
+
+    private HashSet<EnemyHealth> hitEnemies = new HashSet<EnemyHealth>(); // סט של אויבים שנפגעו
 
     public void ExecuteAction()
     {
-
-        //problem it cant enter while is attacing
-
-
         if (!isSpinning)
         {
             spinAttackCoroutine = StartCoroutine(SpinAttack());
@@ -50,6 +53,7 @@ public class SpinAttackActionPlayer : MonoBehaviour, IAction
         playerCombatController.animator.Play("Swordforward", 1);
 
         elapsedTime = 0f;
+        int spinCount = 0;
 
         while (isSpinning && playerCombatController.playerStats.Stamina > spinAttackStaminaCostPerSecond)
         {
@@ -57,7 +61,36 @@ public class SpinAttackActionPlayer : MonoBehaviour, IAction
             playerCombatController.playerStats.Stamina -= spinAttackStaminaCostPerSecond * Time.deltaTime;
 
             // Rotate the player
-            playerCombatController.PlayerObj.transform.Rotate(0f, spinSpeed * Time.deltaTime, 0f);
+            float rotationStep = spinSpeed * Time.deltaTime;
+            playerCombatController.PlayerObj.transform.Rotate(0f, rotationStep, 0f);
+            currentRotation += rotationStep;
+
+            // בדיקה אם השחקן השלים סיבוב שלם
+            if (currentRotation >= 360f)
+            {
+                spinCount++;  // עדכון מספר הסיבובים שהשחקן השלים
+                currentRotation = 0f;  // איפוס הסיבוב
+
+                // בדיקה אם השחקן השלים את מספר הסיבובים הנדרש לאיפוס רשימת הנפגעים
+                if (spinCount >= spinsBeforeReset)
+                {
+                    hitEnemies.Clear();  // איפוס רשימת הנפגעים
+                    spinCount = 0;       // איפוס מספר הסיבובים
+                }
+            }
+
+            // Cast Ray from the sword to detect enemies
+            RaycastHit hit;
+            if (Physics.Raycast(playerCombatController.transform.position + Vector3.up, playerCombatController.PlayerObj.forward, out hit, swordLength, enemyLayer))
+            {
+                EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
+                if (enemyHealth != null && !hitEnemies.Contains(enemyHealth))
+                {
+                    enemyHealth.TakeDamage(damage);
+                    hitEnemies.Add(enemyHealth); // הוספת האויב לרשימת הנפגעים
+                    Debug.Log("Damage dealt to: " + hit.collider.name);
+                }
+            }
 
             // Check if the player has run out of stamina
             if (playerCombatController.playerStats.Stamina < spinAttackStaminaCostPerSecond)
@@ -92,5 +125,14 @@ public class SpinAttackActionPlayer : MonoBehaviour, IAction
         playerCombatController.animator.Play("Blend Tree 2", 1);
         playerCombatController.isAttackung = false;
         //playerCombatController.animator.CrossFade("Idle", .2f); // Transition back to idle or any other state
+    }
+
+    // Gizmo to visualize the Raycast
+    private void OnDrawGizmos()
+    {
+        if (playerCombatController.transform.position == null) return;
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(playerCombatController.transform.position + Vector3.up, playerCombatController.PlayerObj.forward * swordLength);
     }
 }

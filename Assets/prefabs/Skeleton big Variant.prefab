@@ -726,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3961199045676226841, guid: fcc7e72ef9922724c9dbe91fe1141293, type: 3}
       propertyPath: health
-      value: 270
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3961199045676226841, guid: fcc7e72ef9922724c9dbe91fe1141293, type: 3}
       propertyPath: audioClip
