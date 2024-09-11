@@ -21,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
     private EnemyHealth enemyHealth;
     [SerializeField] bool isOfMash;
     [SerializeField] LayerMask raycastLayers;
+    public bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -67,11 +68,11 @@ public class EnemyMovement : MonoBehaviour
             {
                 hasLineOfSight = true;
                 combatController.isAttacking = false;
-                if (agent.isActiveAndEnabled)
+                if (agent.isActiveAndEnabled && canMove)
                     agent.SetDestination(player.transform.position);
             }
         }
-        if (agent.hasPath && !combatController.isAttacking && hasLineOfSight)
+        if (agent.hasPath && !combatController.isAttacking && hasLineOfSight && canMove)
         {
 
             if (agent.isOnOffMeshLink)
@@ -102,7 +103,7 @@ public class EnemyMovement : MonoBehaviour
             }
 
         }
-        if (/*!combatController.isAttacking &&*/ agent.enabled && hasLineOfSight)
+        if (/*!combatController.isAttacking &&*/ agent.enabled && hasLineOfSight && canMove)
         {
             agent.SetDestination(player.transform.position);
         }

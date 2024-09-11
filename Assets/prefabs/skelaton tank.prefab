@@ -805,7 +805,9 @@ GameObject:
   - component: {fileID: 4941962133803978158}
   - component: {fileID: 5466221042430444124}
   - component: {fileID: 5056664313232390192}
-  m_Layer: 7
+  - component: {fileID: 2822203616170678345}
+  - component: {fileID: 7691683714087582330}
+  m_Layer: 12
   m_Name: Ax_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,6 +882,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2822203616170678345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3733414918704974904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef278a0e07a70ef4d8af4c6b802a66ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dameg: 120
+  delay: 1
+  enemy: {fileID: 7609711363234055607}
+--- !u!65 &7691683714087582330
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3733414918704974904}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9703215, y: 2.1521544, z: 0.33446425}
+  m_Center: {x: -0.17911911, y: 0.42142373, z: -0.000004135622}
 --- !u!1 &4266843577251984708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,7 +2068,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -49.67841, y: 0.99946976, z: 5.3150306}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4596, y: 1.4596, z: 1.4596}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7538082978617945466}
@@ -2104,7 +2142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCombatController: {fileID: 2219770691860956000}
   swardAttackTime: 2
-  swardAttackCooldown: 0.1
+  swardAttackCooldown: 4
   swardAttackInCooldown: 0
   audioClip: {fileID: 8300000, guid: 57e0e67a2976feb40947bbf6eb33681f, type: 3}
 --- !u!114 &9133362375515835659
@@ -2119,7 +2157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca19e0edefbd8744f8749c2258d319bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
+  health: 500
   invincible: 0
   hitTime: 2
   deathTime: 7
@@ -2167,7 +2205,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.29
-  m_Speed: 2.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

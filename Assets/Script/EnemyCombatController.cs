@@ -81,6 +81,7 @@ public class EnemyCombatController : MonoBehaviour
             {
                 curentProtectedSequenceNumber++;
                 shild.SetActive(true);
+                EnemyMovement.canMove = false;
                 inProtectedSequence = true;
                 EnemyHealth.invincible = true;
                 EnemyHealth.TakeDamage(0f);
@@ -135,6 +136,7 @@ public class EnemyCombatController : MonoBehaviour
     {
         inProtectedSequence = false;
         shild.SetActive(false);
+        EnemyMovement.canMove = true;
         EnemyHealth.invincible = false;
         EnemyHealth.TakeDamage(0f);
     }
