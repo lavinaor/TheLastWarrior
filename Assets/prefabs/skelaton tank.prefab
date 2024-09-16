@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef278a0e07a70ef4d8af4c6b802a66ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dameg: 120
+  Dameg: 100
   delay: 1
   enemy: {fileID: 7609711363234055607}
 --- !u!65 &7691683714087582330
@@ -916,8 +916,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9703215, y: 2.1521544, z: 0.33446425}
-  m_Center: {x: -0.17911911, y: 0.42142373, z: -0.000004135622}
+  m_Size: {x: 0.9703215, y: 1.0310687, z: 0.33446422}
+  m_Center: {x: -0.17912398, y: 0.98195565, z: -0.000007778666}
 --- !u!1 &4266843577251984708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,6 +2195,7 @@ MonoBehaviour:
   raycastLayers:
     serializedVersion: 2
     m_Bits: 375
+  canMove: 1
 --- !u!195 &2402992123989628911
 NavMeshAgent:
   m_ObjectHideFlags: 0
