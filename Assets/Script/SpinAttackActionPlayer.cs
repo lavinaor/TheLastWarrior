@@ -121,8 +121,6 @@ public class SpinAttackActionPlayer : MonoBehaviour, IAction
         isSpinning = false;
         playerCombatController.playerMovement.stoppSpining = false;
         playerCombatController.animator.SetBool("Swordforward", false);
-        playerCombatController.animator.Play("Blend Tree 2", 0);
-        playerCombatController.animator.Play("Blend Tree 2", 1);
         playerCombatController.isAttackung = false;
         //playerCombatController.animator.CrossFade("Idle", .2f); // Transition back to idle or any other state
     }
