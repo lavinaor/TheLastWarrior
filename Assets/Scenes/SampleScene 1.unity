@@ -4661,7 +4661,7 @@ MonoBehaviour:
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
   m_YDamping: 0
-  m_ZDamping: 1
+  m_ZDamping: 0.3
   m_CameraUp: 3
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -8549,7 +8549,7 @@ MonoBehaviour:
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
   m_YDamping: 0
-  m_ZDamping: 1
+  m_ZDamping: 0.3
   m_CameraUp: 3
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -12746,7 +12746,7 @@ MonoBehaviour:
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
   m_YDamping: 0
-  m_ZDamping: 1
+  m_ZDamping: 0.3
   m_CameraUp: 3
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -13009,7 +13009,7 @@ MonoBehaviour:
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
   m_YDamping: 0
-  m_ZDamping: 1
+  m_ZDamping: 0.3
   m_CameraUp: 3
   m_PitchDamping: 0
   m_YawDamping: 0
