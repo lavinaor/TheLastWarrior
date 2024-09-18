@@ -11,53 +11,39 @@ public class IActionDashAttackPlayer : MonoBehaviour, IAction
     [SerializeField] playerCombatController playerCombatController;
 
     [SerializeField] float Dameg;
+    [SerializeField] float DamegRadius = 5f;
     [SerializeField] float dashDistance = 5f;
     [SerializeField] float dashSpeed = 20f;
     [SerializeField] float endPositionOffset = 0.1f;
     [SerializeField] GameObject trail;
     [SerializeField] float trailTime;
-    [SerializeField] float dashCooldown = 5f;
-    private float dashInCooldown = 0f;
-    public Image CooldownImageFill;
-    public TMP_Text CooldownText;
     [SerializeField] LayerMask obstacleMask;
     [SerializeField] AudioClip audioClip;
+    [SerializeField] bool isActive = false;
+    [SerializeField] LayerMask enemyLayer;
 
-    //in programe atack bool
-    private bool isAttackung = false;
+    // רשימה שתשמור את האויבים שכבר נפגעו
+    private HashSet<Collider> damagedEnemies = new HashSet<Collider>();
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        UpdateCooldownUI();
-    }
-
-    private void Update()
-    {
-        if (dashInCooldown > 0f)
+        if (isActive)
         {
-            dashInCooldown -= Time.deltaTime;
-            UpdateCooldownUI();
-            if (dashInCooldown < (dashCooldown - trailTime))
-            {
-                trail.SetActive(false);
-            }
+            DealDamageToEnemiesInArea();
         }
     }
 
     public void ExecuteAction()
     {
-        if (dashInCooldown <= 0f)
-        {
-            StartCoroutine(DashAttack());
-        }
+        StartCoroutine(DashAttack());
     }
+
     IEnumerator DashAttack()
     {
         float dashTime = dashDistance / dashSpeed;
         float elapsedTime = 0f;
 
-        isAttackung = true;
+        isActive = true;
         trail.SetActive(true);
         playerCombatController.isAttackung = true;
         playerCombatController.animator.SetBool("Swordforward", true);
@@ -85,28 +71,44 @@ public class IActionDashAttackPlayer : MonoBehaviour, IAction
 
         playerCombatController.transform.position = endPosition;
         playerCombatController.isAttackung = false;
-        isAttackung = false;
         playerCombatController.animator.SetBool("Swordforward", false);
+        isActive = false;
 
-        dashInCooldown = dashCooldown;
-        UpdateCooldownUI();
+        new WaitForSeconds(trailTime);
+        trail.SetActive(false);
+
+        // איפוס רשימת האויבים שנפגעו
+        damagedEnemies.Clear();
     }
 
-    public void UpdateCooldownUI()
-    {
-        CooldownImageFill.fillAmount = (dashCooldown - dashInCooldown) / dashCooldown;
-        if (dashInCooldown > 0)
-            CooldownText.text = dashInCooldown.ToString("0");
-        else
-            CooldownText.text = new string(" ");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other != null && other.GetComponent<EnemyHealth>() && isAttackung)
+    /*    private void OnTriggerEnter(Collider other)
         {
-            var enemyHealth = other.GetComponent<EnemyHealth>();
-            enemyHealth.TakeDamage(Dameg);
+            if (other != null && other.GetComponent<EnemyHealth>() && isActive)
+            {
+                Debug.Log("dameg  " +  other);
+                var enemyHealth = other.GetComponent<EnemyHealth>();
+                enemyHealth.TakeDamage(Dameg);
+            }
+        }*/
+    void DealDamageToEnemiesInArea()
+    {
+        // מוצא את כל הקוליידרים ברדיוס עם שכבת האויבים
+        Collider[] hitEnemies = Physics.OverlapSphere(transform.position + Vector3.up, DamegRadius, enemyLayer);
+
+        foreach (Collider enemy in hitEnemies)
+        {
+            if (enemy != null && !damagedEnemies.Contains(enemy))
+            {
+                EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(Dameg);
+                    Debug.Log("Damage dealt to: " + enemy.name);
+
+                    // מוסיף את האויב לרשימה כדי שלא יפגע שוב
+                    damagedEnemies.Add(enemy);
+                }
+            }
         }
     }
 
@@ -129,5 +131,7 @@ public class IActionDashAttackPlayer : MonoBehaviour, IAction
             Gizmos.DrawSphere(hit.point, 0.5f);
             Gizmos.DrawLine(startPosition, hit.point); // Draw line to the hit point
         }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + Vector3.up, DamegRadius);
     }
 }

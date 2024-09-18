@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float sprintSpeedStamina;
     private float speed;
     public bool canMove;
+    [SerializeField] float accelerationSpeed = 5f;
     [SerializeField] float groundDrag;
     [SerializeField] Transform orientation;
     public bool stoppSpining = false;
@@ -142,11 +143,11 @@ public class PlayerMovement : MonoBehaviour
 
             // on ground
             if (grounded)
-                rb.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
+                rb.AddForce(moveDirection.normalized * speed * accelerationSpeed, ForceMode.Force);
 
             // in air
             else if (!grounded)
-                rb.AddForce(moveDirection.normalized * speed * 10f * airMultiplier, ForceMode.Force);
+                rb.AddForce(moveDirection.normalized * speed * accelerationSpeed * airMultiplier, ForceMode.Force);
         }
     }
 

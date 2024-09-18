@@ -91,7 +91,8 @@ public class SpawnCreatures : MonoBehaviour, IAction
         {
             for (int i = spawnedCreatures.Count - 1; i >= 0; i--)
             {
-                if (spawnedCreatures[i] == null)
+                EnemyHealth enemyHealth = spawnedCreatures[i].GetComponent<EnemyHealth>();
+                if (enemyHealth != null && enemyHealth.health <= 0)
                 {
                     spawnedCreatures.RemoveAt(i);
                 }

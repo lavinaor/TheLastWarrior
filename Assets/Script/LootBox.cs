@@ -13,6 +13,7 @@ public class LootBox : MonoBehaviour
     [SerializeField] TMP_Text interactionText; // UI Text for interaction
     [SerializeField] PlayerStats playerStats; // Reference to the player's stats
     [SerializeField] Camera mainCamera; // Reference to the main camera
+    [SerializeField] int poishenIncris = 1;
 
     private bool playerInRange = false;
     private bool a = false;
@@ -66,7 +67,7 @@ public class LootBox : MonoBehaviour
         Debug.Log("open2");
         animator.CrossFade("open", 1f);
         interactionText.gameObject.SetActive(false);
-        playerStats.AddHealthPotion(1f);
+        playerStats.AddHealthPotion(poishenIncris);
         opend = true;
     }
 

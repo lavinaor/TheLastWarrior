@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class playerCombatController : MonoBehaviour
 {
-    public List<GameObject> actionObjects;
+    //slote list
+    public List<GameObject> slotObjects;
+    private List<SlotManeger> slotManegers = new List<SlotManeger>();
 
 
     [Header("player informashen")]
@@ -24,8 +26,6 @@ public class playerCombatController : MonoBehaviour
     public float maxAngle = 45f;
     public GameObject markerPrefab;
 
-    private List<IAction> actions = new List<IAction>();
-
     [SerializeField] KeyCode attackA = KeyCode.C;
     [SerializeField] KeyCode attackB = KeyCode.V;
     [SerializeField] KeyCode attack1 = KeyCode.Alpha1;
@@ -41,57 +41,26 @@ public class playerCombatController : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerStats = GetComponent<PlayerStats>();
 
-        foreach (GameObject obj in actionObjects)
+        // fils the slots
+        foreach (GameObject obj in slotObjects)
         {
-            IAction action = obj.GetComponent<IAction>();
-            if (action != null)
+            SlotManeger slot = obj.GetComponent<SlotManeger>();
+            if (slot != null)
             {
-                actions.Add(action);
+                slotManegers.Add(slot);
             }
         }
     }
 
     void Update()
     {
-        // when to use first attack
-        if (Input.GetKeyDown(attackA) && !isAttackung)
+        // slot activate the slote that got prest
+        foreach (SlotManeger obj in slotManegers)
         {
-            actions[0].ExecuteAction();
-        }
-
-        // when to use second attack
-        if (Input.GetKeyDown(attackB) && !isAttackung)
-        {
-            if (actions.Count > 1)
+            // when to use attack
+            if (Input.GetKeyDown(obj.slotKeybind))
             {
-                actions[1].ExecuteAction(); // הפעלת הפעולה הראשונה
-            }
-        }
-
-        // when to use second attack
-        if (Input.GetKeyDown(attack1) && !isAttackung)
-        {
-            if (actions.Count > 2)
-            {
-                actions[2].ExecuteAction(); // הפעלת הפעולה הראשונה
-            }
-        }
-
-        // when to use second attack
-        if (Input.GetKeyDown(attack2) && !isAttackung)
-        {
-            if (actions.Count > 3)
-            {
-                actions[3].ExecuteAction(); // הפעלת הפעולה הראשונה
-            }
-        }
-
-        // when to use second attack
-        if (Input.GetKeyDown(attack3) && !isAttackung)
-        {
-            if (actions.Count > 4)
-            {
-                actions[4].ExecuteAction(); // הפעלת הפעולה הראשונה
+                obj.ExecuteSlotAction(); //activate attack
             }
         }
 

@@ -6,14 +6,17 @@ using UnityEngine.UI;
 
 public class SlotManeger : MonoBehaviour
 {
+    [SerializeField] playerCombatController playerCombatController;
+
     public string Name;
+    public KeyCode slotKeybind = KeyCode.Alpha0;
     public float AttackTime = 1f;
     public float AttackCooldown;
     public Image CooldownImageFill;
     public TMP_Text CooldownText;
     public bool canEnterWhileAttack = false;
-    public bool cantMoveWhileAttack = true;
     public bool isActive = false;
+    public GameObject actionObject;
     public IAction action;
 
     private float AttackInCooldown;
@@ -21,6 +24,7 @@ public class SlotManeger : MonoBehaviour
     private void Start()
     {
         UpdateCooldownUI();
+        action = actionObject.GetComponent<IAction>();
     }
 
     private void Update()
@@ -33,29 +37,48 @@ public class SlotManeger : MonoBehaviour
     }
     public void ExecuteSlotAction()
     {
-        if (AttackInCooldown <= 0f && !canEnterWhileAttack)
+        Debug.Log("enterd " + Name);
+        if (AttackInCooldown <= 0f && playerCombatController.isAttackung == false)
         {
             action.ExecuteAction();
+            AttackInCooldown = AttackTime;
+            CooldownImageFill.color = new Color(0.75f, 0.0f, 1.0f, 1.0f);
+            UpdateCooldownUI();
+            isActive = true;
             Invoke("StartCooldown", AttackTime);
         }
-        if (canEnterWhileAttack && isActive)
+        else
         {
-            action.ExecuteAction();
+            if (canEnterWhileAttack && isActive)
+            {
+                isActive = false;
+                action.ExecuteAction();
+            }
         }
     }
 
     private void StartCooldown()
     {
-        AttackInCooldown = AttackCooldown + AttackTime;
+        AttackInCooldown = AttackCooldown;
+        isActive = false;
         UpdateCooldownUI();
     }
 
     public void UpdateCooldownUI()
     {
+        CooldownImageFill.color = Color.white;
         CooldownImageFill.fillAmount = AttackCooldown * 10 - AttackInCooldown * 10;
-        if (AttackInCooldown > 0 && AttackCooldown > 1)
+        if (AttackInCooldown > 0 && AttackInCooldown > 1)
+        {
             CooldownText.text = AttackInCooldown.ToString("0");
+        }
+        else if (AttackInCooldown > 0 && AttackInCooldown < 1)
+        {
+            CooldownText.text = AttackInCooldown.ToString("F1");
+        }
         else
+        {
             CooldownText.text = new string(" ");
+        }
     }
 }
