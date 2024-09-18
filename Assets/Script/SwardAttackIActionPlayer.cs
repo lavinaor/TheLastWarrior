@@ -9,34 +9,17 @@ public class SwardAttackIActionPlayer : MonoBehaviour, IAction
     [SerializeField] playerCombatController playerCombatController;
 
     [Header("sward attack info")]
+    [SerializeField] float damage;
+    [SerializeField] float damageRadius = 5f;
+    [SerializeField] float coneAngle = 45f;
+    [SerializeField] LayerMask enemyLayer;
     [SerializeField] float swardAttackTime = 1f;
-    [SerializeField] float swardAttackCooldown;
-    [SerializeField] private float swardAttackInCooldown = 0f;
-    public Image CooldownImageFill;
-    public TMP_Text CooldownText;
     [SerializeField] bool cantMoveWhileSwardAttack = true;
     [SerializeField] AudioClip audioClip;
 
-    private void Start()
-    {
-        UpdateCooldownUI();
-    }
-
-    private void Update()
-    {
-        if (swardAttackInCooldown > 0f)
-        {
-            swardAttackInCooldown -= Time.deltaTime;
-            UpdateCooldownUI();
-        }
-    }
-
     public void ExecuteAction()
     {
-        if (swardAttackInCooldown <= 0f)
-        {
-            StartCoroutine(SwardAttack());
-        }
+        StartCoroutine(SwardAttack());
     }
 
     IEnumerator SwardAttack()
@@ -46,6 +29,7 @@ public class SwardAttackIActionPlayer : MonoBehaviour, IAction
         if (cantMoveWhileSwardAttack)
             playerCombatController.playerMovement.canMove = false;
         playerCombatController.animator.CrossFade("attack", .01f);
+        DealDamageToEnemiesInCone();
 
         // play sound FX 
         SoundFXManager.Instance.PlaySoundFXClip(audioClip, transform, 0.5f);
@@ -55,17 +39,49 @@ public class SwardAttackIActionPlayer : MonoBehaviour, IAction
         playerCombatController.isAttackung = false;
         if (cantMoveWhileSwardAttack)
             playerCombatController.playerMovement.canMove = true;
-
-        //start culdown
-        swardAttackInCooldown = swardAttackCooldown;
-        UpdateCooldownUI();
     }
-    public void UpdateCooldownUI()
+
+    void DealDamageToEnemiesInCone()
     {
-        CooldownImageFill.fillAmount = swardAttackCooldown * 10 - swardAttackInCooldown * 10;
-        if (swardAttackInCooldown > 0 && swardAttackCooldown > 1)
-            CooldownText.text = swardAttackInCooldown.ToString("0");
-        else
-            CooldownText.text = new string(" ");
+        // מוצא את כל הקוליידרים ברדיוס עם שכבת האויבים
+        Collider[] hitEnemies = Physics.OverlapSphere(transform.position + Vector3.up, damageRadius, enemyLayer);
+
+        foreach (Collider enemy in hitEnemies)
+        {
+            if (enemy != null)
+            {
+                Vector3 directionToEnemy = (enemy.transform.position - transform.position).normalized;
+                float angleToEnemy = Vector3.Angle(playerCombatController.PlayerObj.transform.forward, directionToEnemy);
+
+                // אם האויב נמצא בזווית המשולש מול השחקן
+                if (angleToEnemy <= coneAngle / 2f)
+                {
+                    EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+                    if (enemyHealth != null)
+                    {
+                        enemyHealth.TakeDamage(damage);
+                        Debug.Log("Damage dealt to: " + enemy.name);
+                    }
+                }
+            }
+        }
+    }
+
+    // Gizmo to visualize the attack area
+    private void OnDrawGizmos()
+    {
+        if (playerCombatController == null) return;
+
+        // קו קדמי של המתקפה
+        Vector3 attackDirection = playerCombatController.PlayerObj.transform.forward;
+        Vector3 startPosition = playerCombatController.transform.position;
+
+        // ציור קווים המייצגים את קצוות הקונוס
+        Vector3 rightBound = Quaternion.Euler(0, coneAngle / 2f, 0) * attackDirection * damageRadius;
+        Vector3 leftBound = Quaternion.Euler(0, -coneAngle / 2f, 0) * attackDirection * damageRadius;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(startPosition, rightBound);
+        Gizmos.DrawRay(startPosition, leftBound);
     }
 }

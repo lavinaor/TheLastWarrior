@@ -7,6 +7,8 @@ public class CameraZoneSwitcher : MonoBehaviour
 {
     public CinemachineVirtualCamera virtualCamera;
 
+    public CinemachineVirtualCamera[] allCameras;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -14,8 +16,7 @@ public class CameraZoneSwitcher : MonoBehaviour
             // קבלת הרכיב CinemachineBrain מהמצלמה הראשית
             CinemachineBrain cinemachineBrain = Camera.main.GetComponent<CinemachineBrain>();
 
-            // מעבר על כל המצלמות הווירטואליות בסצנה
-            foreach (CinemachineVirtualCamera cam in FindObjectsOfType<CinemachineVirtualCamera>())
+            foreach(CinemachineVirtualCamera cam in allCameras)
             {
                 if (cam == virtualCamera)
                 {

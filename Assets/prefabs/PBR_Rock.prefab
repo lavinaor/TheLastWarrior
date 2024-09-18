@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dameg: 75
-  hitEffect: {fileID: 1250507045210962, guid: 3fe0df07025a3e747855b1bb671fc04e, type: 3}
+  hitEffect: {fileID: 1250507045210962, guid: 1917d40c933fc2c4386e02572869a106, type: 3}
   explosionRadius: 5
   explosionForce: 700
   explosionOffset: {x: 0, y: 0, z: 0}

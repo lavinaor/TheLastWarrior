@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class slotSetingsBase : ScriptableObject
 {
     public string Name;
+    [SerializeField] KeyCode attackA = KeyCode.Alpha0;
     public float AttackTime = 1f;
     public float AttackCooldown;
     public Image CooldownImageFill;

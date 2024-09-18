@@ -891,6 +891,8 @@ MonoBehaviour:
   healthBarFillDelayed: {fileID: 0}
   healthBarFillDelayedDelayNumber: 1
   healthText: {fileID: 0}
+  deathAudioClip: {fileID: 0}
+  damegAudioClip: {fileID: 0}
   hasEventWhenDeade: 0
   eventWhenDeade:
     m_PersistentCalls:
@@ -947,7 +949,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.37
-  m_Speed: 1.58
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
