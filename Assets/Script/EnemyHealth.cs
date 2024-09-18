@@ -8,6 +8,8 @@ using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] EnemyCombatController enemyCombatController;
+
     [Header("health")]
     public float health;
     public bool invincible = false;
@@ -32,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyCombatController = GetComponent<EnemyCombatController>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         maxHealth = health;

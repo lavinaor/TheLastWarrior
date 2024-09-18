@@ -28,6 +28,7 @@ public class EnemyCombatController : MonoBehaviour
     public GameObject ProtectedSequenceActionObject;
     private IAction ProtectedSequenceAction;
     [SerializeField] GameObject shild;
+    [SerializeField] GameObject posishen;
 
     [Header("info")]
     public GameObject player;
@@ -83,6 +84,7 @@ public class EnemyCombatController : MonoBehaviour
                 shild.SetActive(true);
                 EnemyMovement.canMove = false;
                 inProtectedSequence = true;
+                animator.CrossFade("spell sumening", 2f);
                 EnemyHealth.invincible = true;
                 EnemyHealth.TakeDamage(0f);
 
