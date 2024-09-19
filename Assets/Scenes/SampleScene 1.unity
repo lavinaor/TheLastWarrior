@@ -6529,7 +6529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 1933688486}
-  m_PathPosition: 1.1731682
+  m_PathPosition: 1.2501874
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -8379,8 +8379,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660819272}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.363237, y: 0.0041419673, z: -0.0016148312, w: 0.93168616}
-  m_LocalPosition: {x: -260.77484, y: 38.71809, z: 3.5055006}
+  m_LocalRotation: {x: 0.34278107, y: 0.003064259, z: -0.001118117, w: 0.9394097}
+  m_LocalPosition: {x: -260.06427, y: 38.736115, z: 3.5247037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8825,7 +8825,7 @@ Transform:
   m_GameObject: {fileID: 698295191}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7061892, z: -0, w: 0.7080232}
-  m_LocalPosition: {x: -59.5, y: 0.655, z: 6.1}
+  m_LocalPosition: {x: -58.8, y: 0.655, z: 6.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11300,7 +11300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754037934}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21063486, y: 0.33852968, z: -0.07803673, w: 0.913751}
+  m_LocalRotation: {x: 0.179415, y: 0.3524287, z: -0.06903845, w: 0.915881}
   m_LocalPosition: {x: -263.77, y: 34.34, z: 6.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15916,7 +15916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858602311}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.11156134, y: 0.8353334, z: -0.18424773, w: -0.5057914}
+  m_LocalRotation: {x: -0.1144213, y: 0.83305436, z: -0.18778083, w: -0.50760865}
   m_LocalPosition: {x: -227.17389, y: 50.696106, z: 27.11597}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16985,7 +16985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21063486, y: 0.33852968, z: -0.07803673, w: 0.913751}
+  m_LocalRotation: {x: 0.179415, y: 0.3524287, z: -0.06903845, w: 0.915881}
   m_LocalPosition: {x: -263.77, y: 34.34, z: 6.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17370,7 +17370,7 @@ Transform:
   m_GameObject: {fileID: 981817649}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -260.72092, y: 29.961372, z: 9.570175}
+  m_LocalPosition: {x: -260.0209, y: 29.961372, z: 10.170175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17508,7 +17508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016130446}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.034110013, y: -0.6516084, z: 0.029352607, w: 0.7572196}
+  m_LocalRotation: {x: 0.034377914, y: -0.64928854, z: 0.029401094, w: 0.75919574}
   m_LocalPosition: {x: -147.05415, y: 43.51873, z: -7.5679493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -27234,7 +27234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645912142}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.037955057, y: -0.6315027, z: 0.030974358, w: 0.7738245}
+  m_LocalRotation: {x: 0.038186643, y: -0.6294288, z: 0.031008147, w: 0.77549964}
   m_LocalPosition: {x: -126.55487, y: 53.36786, z: -17.88628}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47275,7 +47275,7 @@ Transform:
   m_GameObject: {fileID: 2114739443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -260.72092, y: 29.961372, z: 9.570175}
+  m_LocalPosition: {x: -260.0209, y: 29.961372, z: 10.170175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49689,6 +49689,10 @@ PrefabInstance:
     - target: {fileID: 4582236700508497361, guid: eee37211783b9a146a1f1e3ba0674104, type: 3}
       propertyPath: raycastLayers.m_Bits
       value: 375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281466885609690595, guid: eee37211783b9a146a1f1e3ba0674104, type: 3}
+      propertyPath: jumpTime
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6281466885609690595, guid: eee37211783b9a146a1f1e3ba0674104, type: 3}
       propertyPath: delaytoefect
