@@ -31,6 +31,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] bool hasEventWhenDeade = false;
     [SerializeField] UnityEvent eventWhenDeade;
 
+    [SerializeField] bool hasParticalEfect = false;
+    public GameObject particlePrefab;
+    public float particleLifetime = 2.0f;
+    [SerializeField] Transform particalPosishen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +57,7 @@ public class EnemyHealth : MonoBehaviour
         if (!invincible)
         {
             health -= amount;
+            SpawnParticleEffect();
         }
         if (health <= 0f)
         {
@@ -65,6 +71,18 @@ public class EnemyHealth : MonoBehaviour
             SoundFXManager.Instance.PlaySoundFXClip(damegAudioClip, transform, 0.5f);
         }
         StartCoroutine(UpdateHealthUI());
+    }
+
+    public void SpawnParticleEffect()
+    {
+        if (particlePrefab != null && hasParticalEfect)
+        {
+            GameObject spawnedParticles = Instantiate(particlePrefab, particalPosishen.position, Quaternion.identity);
+
+            spawnedParticles.transform.SetParent(this.transform);
+
+            Destroy(spawnedParticles, particleLifetime);
+        }
     }
 
     IEnumerator UpdateHealthUI()
