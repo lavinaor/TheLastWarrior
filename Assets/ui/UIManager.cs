@@ -49,6 +49,11 @@ public class UIManager : MonoBehaviour
                     currentUI = UI.exitUI;
                     ChangeActiveUI();
                 }
+                if (currentUI != UI.winUI)
+                {
+                    currentUI = UI.winUI;
+                    ChangeActiveUI();
+                }
             }
         }
     }
