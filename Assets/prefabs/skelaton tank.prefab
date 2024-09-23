@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef278a0e07a70ef4d8af4c6b802a66ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dameg: 100
+  Dameg: 70
   delay: 1
   enemy: {fileID: 7609711363234055607}
 --- !u!65 &7691683714087582330
@@ -2068,7 +2068,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -49.67841, y: 0.99946976, z: 5.3150306}
-  m_LocalScale: {x: 1.4596, y: 1.4596, z: 1.4596}
+  m_LocalScale: {x: 2.0342083, y: 2.0342083, z: 2.0342083}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7538082978617945466}
@@ -2121,6 +2121,7 @@ MonoBehaviour:
   ProtectedSequenceHealthPresenteges: []
   ProtectedSequenceActionObject: {fileID: 0}
   shild: {fileID: 0}
+  posishen: {fileID: 0}
   player: {fileID: 0}
   isAttacking: 0
   EnemyMovement: {fileID: 0}
@@ -2157,7 +2158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca19e0edefbd8744f8749c2258d319bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  enemyCombatController: {fileID: 0}
+  health: 300
   invincible: 0
   hitTime: 2
   deathTime: 7

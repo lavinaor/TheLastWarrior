@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject exitUI;
     [SerializeField] GameObject deathUI;
     [SerializeField] GameObject settingsUI;
+    [SerializeField] GameObject winUI;
 
     [SerializeField] UI currentUI = UI.ux;
     public enum UI
@@ -18,7 +19,8 @@ public class UIManager : MonoBehaviour
         ux,
         exitUI,
         deathUI,
-        settingsUI
+        settingsUI,
+        winUI
     }
 
     [SerializeField] int MainManuNum;
@@ -35,7 +37,7 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (currentUI == UI.exitUI && currentUI != UI.deathUI)
+            if (currentUI == UI.exitUI && currentUI != UI.deathUI && currentUI != UI.winUI)
             {
                 currentUI = UI.ux;
                 ChangeActiveUI();
@@ -66,6 +68,11 @@ public class UIManager : MonoBehaviour
         currentUI = UI.settingsUI;
         ChangeActiveUI();
     }
+    public void ChangeToWin()
+    {
+        currentUI = UI.winUI;
+        ChangeActiveUI();
+    }
 
     // Call this function to Change to the current active ui
     public void ChangeActiveUI()
@@ -91,6 +98,11 @@ public class UIManager : MonoBehaviour
         if (currentUI == UI.deathUI)
         {
             deathUI.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        if (currentUI == UI.winUI)
+        {
+            winUI.SetActive(true);
             Time.timeScale = 0f;
         }
         if (currentUI == UI.settingsUI)
