@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCombatController: {fileID: 3358751725999304962}
   jumpForce: 200
-  jumpTime: 3
+  jumpTime: 6
   waveRadius: 6
   shockWaveAttackDamage: 100
   playerLayer:
@@ -55,9 +55,9 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
-  delaytosound: 3
-  delaytoefect: 3
-  shockWaveAttackCooldown: 10
+  delaytosound: 1.2
+  delaytoefect: 0.5
+  shockWaveAttackCooldown: 2
   particleSystem:
   - {fileID: 1545901328882176860}
   - {fileID: 7452379876253738754}
@@ -242,8 +242,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2421208005428688016}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.40677616, y: 0.5817515, z: -0.38977963, w: 0.5866602}
-  m_LocalPosition: {x: -0.012245762, y: 1.3407906, z: -0.107532345}
+  m_LocalRotation: {x: -0.40677613, y: 0.58175147, z: -0.38977963, w: 0.58666027}
+  m_LocalPosition: {x: -0.012241855, y: 1.3407906, z: -0.10752986}
   m_LocalScale: {x: 0.009999999, y: 0.009999999, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -807,7 +807,6 @@ GameObject:
   - component: {fileID: 6973250598357559668}
   - component: {fileID: 2950450978884558058}
   - component: {fileID: 3758073425649643111}
-  - component: {fileID: 3438719597116320016}
   - component: {fileID: 3043799944713658714}
   m_Layer: 7
   m_Name: PBR_Golem after chaing
@@ -824,7 +823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6373912733936496472}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 99.55, y: 2.9317994, z: 16.11}
   m_LocalScale: {x: 0.94388026, y: 0.94388026, z: 0.94388026}
   m_ConstrainProportionsScale: 0
@@ -861,6 +860,8 @@ MonoBehaviour:
   hasProtectedSequence: 0
   ProtectedSequenceHealthPresenteges: []
   ProtectedSequenceActionObject: {fileID: 0}
+  shild: {fileID: 0}
+  posishen: {fileID: 0}
   player: {fileID: 0}
   isAttacking: 1
   EnemyMovement: {fileID: 0}
@@ -880,10 +881,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca19e0edefbd8744f8749c2258d319bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  enemyCombatController: {fileID: 0}
+  health: 3000
   invincible: 0
   hitTime: 2
-  deathTime: 10
+  deathTime: 7
   deade: 0
   alwaysShowHealthBar: 0
   healthBar: {fileID: 0}
@@ -891,12 +893,28 @@ MonoBehaviour:
   healthBarFillDelayed: {fileID: 0}
   healthBarFillDelayedDelayNumber: 1
   healthText: {fileID: 0}
-  deathAudioClip: {fileID: 0}
-  damegAudioClip: {fileID: 0}
-  hasEventWhenDeade: 0
+  deathAudioClip: {fileID: 8300000, guid: 32f8d375761ef7b44bc6570cb5a93032, type: 3}
+  damegAudioClip: {fileID: 8300000, guid: 48e8a246970e1234ab4c45fa032c6e0e, type: 3}
+  hasEventWhenDeade: 1
   eventWhenDeade:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: New Animation
+          m_BoolArgument: 0
+        m_CallState: 2
+  hasParticalEfect: 0
+  particlePrefab: {fileID: 0}
+  particleLifetime: 2
+  particalPosishen: {fileID: 0}
 --- !u!114 &4582236700508497361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,7 +935,8 @@ MonoBehaviour:
   isOfMash: 0
   raycastLayers:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 375
+  canMove: 1
 --- !u!95 &6973250598357559668
 Animator:
   serializedVersion: 5
@@ -949,7 +968,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.37
-  m_Speed: 4
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -984,33 +1003,6 @@ CapsuleCollider:
   m_Height: 4.189596
   m_Direction: 1
   m_Center: {x: -0.13386366, y: 1.9904159, z: 0.030053433}
---- !u!54 &3438719597116320016
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6373912733936496472}
-  serializedVersion: 4
-  m_Mass: 50
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &3043799944713658714
 MonoBehaviour:
   m_ObjectHideFlags: 0
