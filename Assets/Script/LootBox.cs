@@ -12,7 +12,6 @@ public class LootBox : MonoBehaviour
     [SerializeField] LayerMask playerLayerMask;
     [SerializeField] TMP_Text interactionText; // UI Text for interaction
     [SerializeField] PlayerStats playerStats; // Reference to the player's stats
-    [SerializeField] Camera mainCamera; // Reference to the main camera
     [SerializeField] int poishenIncris = 1;
 
     private bool playerInRange = false;
@@ -28,7 +27,7 @@ public class LootBox : MonoBehaviour
     void Update()
     {
         playerInRange = Physics.CheckSphere(transform.position, activationRadius, playerLayerMask);
-        if (playerInRange && IsBoxOnScreen())
+        if (playerInRange)
         {
             if (!opend)
             {
@@ -58,7 +57,7 @@ public class LootBox : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        if (!playerInRange && !IsBoxOnScreen())
+        if (!playerInRange)
             interactionText.gameObject.SetActive(false);
     }
     
@@ -69,12 +68,6 @@ public class LootBox : MonoBehaviour
         interactionText.gameObject.SetActive(false);
         playerStats.AddHealthPotion(poishenIncris);
         opend = true;
-    }
-
-    bool IsBoxOnScreen()
-    {
-        Vector3 screenPoint = mainCamera.WorldToViewportPoint(transform.position);
-        return screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
     }
 
     private void OnDrawGizmosSelected()

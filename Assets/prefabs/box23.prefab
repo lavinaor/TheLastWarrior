@@ -186,8 +186,7 @@ MonoBehaviour:
     m_Bits: 256
   interactionText: {fileID: 0}
   playerStats: {fileID: 0}
-  mainCamera: {fileID: 0}
-  poishenIncris: 2
+  poishenIncris: 1
 --- !u!95 &7576376329352327463
 Animator:
   serializedVersion: 5
