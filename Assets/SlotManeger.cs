@@ -67,7 +67,7 @@ public class SlotManeger : MonoBehaviour
     public void UpdateCooldownUI()
     {
         CooldownImageFill.color = Color.white;
-        CooldownImageFill.fillAmount = AttackCooldown * 10 - AttackInCooldown * 10;
+        CooldownImageFill.fillAmount = (AttackCooldown - AttackInCooldown) / AttackCooldown;
         if (AttackInCooldown > 0 && AttackInCooldown > 1)
         {
             CooldownText.text = AttackInCooldown.ToString("0");
