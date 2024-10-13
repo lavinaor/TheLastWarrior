@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        if (!stoppSpining)
+        if (!stoppSpining && (inputDir.sqrMagnitude > 0.01f))
             playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
 
         // handle drag
@@ -122,6 +122,8 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        Debug.Log($"Horizontal: {horizontalInput}, Vertical: {verticalInput}");
 
         // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
