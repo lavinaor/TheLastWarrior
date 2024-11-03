@@ -123,8 +123,6 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        Debug.Log($"Horizontal: {horizontalInput}, Vertical: {verticalInput}");
-
         // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {

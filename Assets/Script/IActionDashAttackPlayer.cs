@@ -77,6 +77,7 @@ public class IActionDashAttackPlayer : MonoBehaviour, IAction
         new WaitForSeconds(trailTime);
         trail.SetActive(false);
 
+
         // איפוס רשימת האויבים שנפגעו
         damagedEnemies.Clear();
     }
