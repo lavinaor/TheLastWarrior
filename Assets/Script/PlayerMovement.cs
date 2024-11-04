@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        if (!stoppSpining)
+        if (!stoppSpining && (inputDir.sqrMagnitude > 0.01f))
             playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
 
         // handle drag

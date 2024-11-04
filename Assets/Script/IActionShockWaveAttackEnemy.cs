@@ -49,7 +49,7 @@ public class IActionShockWaveAttackEnemy : MonoBehaviour, IAction
 
     public void ExecuteAction()
     {
-        if (shockWaveAttackInCooldown <= 0f)
+        if (shockWaveAttackInCooldown <= 0f && enemyCombatController.isAttacking == false)
         {
             Debug.Log("as enterd");
             enemyCombatController.isAttacking = true;
