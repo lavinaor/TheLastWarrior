@@ -79,6 +79,8 @@ public class LootBox : MonoBehaviour
 
         // play sound FX 
         SoundFXManager.Instance.PlaySoundFXClip(audioClip, transform, 0.5f);
+
+        interactionText.text = "'G'";
     }
 
     private void OnDrawGizmosSelected()
