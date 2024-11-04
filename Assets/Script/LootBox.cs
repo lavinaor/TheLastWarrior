@@ -13,6 +13,7 @@ public class LootBox : MonoBehaviour
     [SerializeField] TMP_Text interactionText; // UI Text for interaction
     [SerializeField] PlayerStats playerStats; // Reference to the player's stats
     [SerializeField] int poishenIncris = 1;
+    [SerializeField] bool textBool = false;
 
     private bool playerInRange = false;
     private bool a = false;
@@ -31,7 +32,10 @@ public class LootBox : MonoBehaviour
         {
             if (!opend)
             {
-                interactionText.gameObject.SetActive(true);
+                if (textBool)
+                {
+                   interactionText.gameObject.SetActive(true);
+                }
                 a = true;
             }
 
@@ -44,7 +48,10 @@ public class LootBox : MonoBehaviour
         {
             if (a == true)
             {
-                interactionText.gameObject.SetActive(false);
+                if (textBool)
+                {
+                    interactionText.gameObject.SetActive(false);
+                }
                 a = false;
             }
         }
