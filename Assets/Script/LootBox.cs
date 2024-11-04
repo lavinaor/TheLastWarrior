@@ -14,6 +14,7 @@ public class LootBox : MonoBehaviour
     [SerializeField] PlayerStats playerStats; // Reference to the player's stats
     [SerializeField] int poishenIncris = 1;
     [SerializeField] bool textBool = false;
+    [SerializeField] AudioClip audioClip;
 
     private bool playerInRange = false;
     private bool a = false;
@@ -75,6 +76,9 @@ public class LootBox : MonoBehaviour
         interactionText.gameObject.SetActive(false);
         playerStats.AddHealthPotion(poishenIncris);
         opend = true;
+
+        // play sound FX 
+        SoundFXManager.Instance.PlaySoundFXClip(audioClip, transform, 0.5f);
     }
 
     private void OnDrawGizmosSelected()
